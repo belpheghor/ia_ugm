@@ -1,0 +1,19 @@
+.photo-mentor-list {
+  width:100%;
+  border-radius:50%;
+  padding:20px;
+}
+
+.home-social-network-icon {
+  height:24px;
+  width:24px;
+  margin-right:10px;
+  margin-left:10px;
+  margin-bottom:10px;
+}
+
+.home-social-detail-icon {
+  width:88px;
+  margin:auto;
+}
+

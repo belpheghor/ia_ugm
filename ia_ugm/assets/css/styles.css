@@ -1,0 +1,195 @@
+body {
+  background-color:rgb(255,255,255);
+}
+
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+}
+
+#hero {
+  top:0;
+  position:relative;
+  width:100%;
+  height:80vh;
+}
+
+@media (min-width: 768px) {
+  #hero {
+    background-color:rgba(255,255,255,0.18);
+    height:100vh;
+  }
+}
+
+.navbar-light .navbar-brand {
+  background-image:url("none");
+  background-position:0%;
+  background-size:0%;
+}
+
+#navcol-1 {
+  font-size:13px;
+  font-family:Montserrat, sans-serif;
+  font-weight:600;
+  text-transform:uppercase;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color:rgb(34,34,34);
+}
+
+#title {
+  font-family:Montserrat, sans-serif;
+  font-weight:normal;
+  margin-top:0px;
+}
+
+#subtitle {
+  font-size:40px;
+  font-family:Montserrat, sans-serif;
+  font-weight:bold;
+  height:135px;
+  font-size:40px;
+  font-family:Montserrat, sans-serif;
+}
+
+#hero_bottom {
+  color:white;
+}
+
+.p-top {
+  font-size:26px;
+  font-family:Montserrat, sans-serif;
+  font-weight:bold;
+  margin-bottom:0;
+}
+
+.p-bot {
+  font-size:13px;
+  font-family:Montserrat, sans-serif;
+  font-weight:bold;
+}
+
+.res {
+}
+
+.reserve_button {
+  background-color:rgba(0,98,204,0);
+  border-color:white;
+  border:1px solid;
+  border-radius:30px;
+}
+
+.btn.btn-link.btn-block.arrow_button {
+  color:white;
+  font-size:32px;
+}
+
+.arrow_button {
+}
+
+#hero_bottom .container {
+  max-width:700px;
+  text-align:center;
+}
+
+#logo-main {
+  height:109px;
+}
+
+#logo-brand {
+  width:161px;
+}
+
+#head-bg {
+  position:absolute;
+  top:0;
+  width:100%;
+  height:80vh;
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  color:#333;
+  background-image:url("../../assets/img/ia_bg.png");
+}
+
+#hero-2 {
+  width:100%;
+  height:100vh;
+  background-image:url("none");
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  color:#333;
+  background-color:#ababab;
+}
+
+@media (min-width: 768px) {
+  #head-bg {
+    background-image:url("../../assets/img/ia_bg.png");
+    height:100vh;
+  }
+}
+
+#search-tab {
+  background-color:rgba(255,255,255,0);
+  margin:0;
+  margin-left:14px;
+  padding:0;
+  color:rgb(0,0,0);
+  border-color:rgb(0,0,0);
+}
+
+.btn-more {
+  border-radius:0;
+  margin:auto;
+}
+
+.center-button {
+  width:100%;
+  padding:15px;
+}
+
+.ia-detail-container {
+  height:670px;
+}
+
+.ia-container {
+  margin-top:20px;
+  max-width:1140px;
+}
+
+.social-detail-icon {
+  width:100%;
+  margin-bottom:4px;
+}
+
+.navbar-float {
+  padding:5px 10px;
+  border:none;
+  border-radius:0;
+  margin-bottom:40px;
+  box-shadow:1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-paging {
+  border-radius:0;
+  margin-left:5px;
+  margin-right:5px;
+}
+
+.ia_link {
+  color:rgb(0,0,0);
+  margin-right:5px;
+}
+
+.ia_link:hover {
+  color:rgb(1,88,255);
+}
+
+.no-navbar-container {
+  padding-top:74px;
+}
+
+.hero-fixed {
+  min-height:100vh;
+}
+

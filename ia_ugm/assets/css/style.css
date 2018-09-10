@@ -1,0 +1,170 @@
+
+
+body, html{
+  font-family: 'Montserrat', sans-serif;
+}
+.wrapper{
+ width: 100%;
+ background: #f3f3f3;
+}
+.navbar{
+  margin-bottom: 0px;
+}
+.navbar-default{
+  background: #537bbd;
+}
+.navbar-default .navbar-brand{
+  color: #f3f3f3;
+}
+
+.navbar-default .navbar-brand:hover{
+  color: #f3f3f3;
+}
+
+.navbar-default .navbar-brand:visited{
+  color: #f3f3f3;
+}
+
+.navbar-default .navbar-toggle .icon-brand{
+  background-color: #f3f3f3;
+}
+
+
+.navbar-side{
+  background: #FFFFFF;
+}
+.navbar-side .user{
+  padding: 20px;
+  text-align: center;
+
+}
+
+.navbar-side .user img{
+  width: 30%;
+}
+
+.navbar-side .user h3{
+
+  font-size: 22px;
+}
+.navbar-side ul li{
+  border-bottom: 1px solid #f3f3f3;
+}
+.navbar-side ul li a:hover{
+  color:#537bbd;
+}
+.navbar-side ul li a{
+  color: #537bbd;
+}
+
+/*css dropdown menu*/
+.navbar-side .ia-tree .ia-tree-menu
+{
+  
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  display: none;
+  
+}
+.navbar-side .ia-tree .ia-tree-menu li a
+{
+  padding: 10px;
+  display: block;
+  font-size: 13px;
+}
+.navbar-side .ia-tree .ia-tree-menu li a:hover
+{
+  background: #f3f3f3;
+  text-decoration: none;
+}
+.navbar-side .ia-tree .ia-tree-menu li.active a
+{
+
+}
+
+
+.page-wrapper{
+  padding: 15px;
+  background: #f3f3f3;
+}
+.page-inner{
+  padding: 15px;
+  background: #FFFFFF;
+}
+.page-inner{
+  min-height: 1000px;
+}
+
+.page-inner .form-group{
+  width: 70%;
+}
+.page-inner .input-group date .form-group{
+  width: 70%;
+}
+/*.page-inner hr{
+  background-color: #537bbd;
+  color: #537bbd;
+  bottom: 0px;
+  width: 20%;
+  height: 2px;
+
+}*/
+hr .title-underline-base {
+  position:absolute;
+  height:2px;
+  left:15px;
+  right:15px;
+  bottom:0px;
+  margin-top:0px;
+}
+
+hr .title-underline {
+  background-color:#537abd;
+  position:absolute;
+  bottom:0px;
+  width:20%;
+  color:#537abd;
+  height:2px;
+}
+
+hr .ia-title {
+  font-family:Montserrat, sans-serif;
+  font-size:30px;
+  font-weight:600;
+  text-transform:uppercase;
+  margin-bottom:2px;
+}
+
+hr .ia-gray-title-underline {
+  color:#e1e1e1;
+  background-color:#e1e1e1;
+}
+
+hr .underline-fluid {
+  height:2px;
+  margin-bottom:5px;
+  margin-top:0px;
+}
+.button-edit{
+  color: white;
+  background: #00A6FF; 
+}
+.button-delete{
+  color: white;
+  background: #FF061A;
+}
+/*spesifik css ke desktop*/
+@media(min-width: 768px){
+  .page-wrapper{
+    margin: 0 0 0 260px;
+    padding: 15px;
+    min-height: 1000px;
+  }
+  .navbar-side{
+    width: 260px;
+    position: absolute;
+    z-index: 1;
+    min-height: 1000px;
+  }
+}

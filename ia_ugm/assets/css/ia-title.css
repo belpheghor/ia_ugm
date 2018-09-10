@@ -1,0 +1,37 @@
+.title-underline-base {
+  position:absolute;
+  height:2px;
+  left:15px;
+  right:15px;
+  bottom:0px;
+  margin-top:0px;
+}
+
+.title-underline {
+  background-color:#537abd;
+  position:absolute;
+  bottom:0px;
+  width:20%;
+  color:#537abd;
+  height:2px;
+}
+
+.ia-title {
+  font-family:Montserrat, sans-serif;
+  font-size:30px;
+  font-weight:600;
+  text-transform:uppercase;
+  margin-bottom:2px;
+}
+
+.ia-gray-title-underline {
+  color:#e1e1e1;
+  background-color:#e1e1e1;
+}
+
+.underline-fluid {
+  height:2px;
+  margin-bottom:5px;
+  margin-top:0px;
+}
+

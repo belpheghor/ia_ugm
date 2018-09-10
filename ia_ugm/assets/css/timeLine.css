@@ -1,0 +1,147 @@
+@media (min-width: 992px) {
+  .case-timeline {
+    height:340px;
+  }
+}
+
+.case-timeline {
+  box-shadow:0 0 5px rgba(0, 0, 0, 0.15);
+  color:#000000;
+  float:left;
+  /*top:0;*/
+  font-family:'Lato', Arial, sans-serif;
+  font-size:16px;
+  /*height:auto;*/
+  /*padding-top:78.58%;*/
+  /*width:100%;*/
+  height:332px;
+  margin:10px 0 0 0;
+  /*max-width:310px;*/
+  /*min-width:250px;*/
+  overflow:hidden;
+  position:relative;
+  text-align:left;
+  width:100%;
+}
+
+.case-timeline * {
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+  -webkit-transition:all 0.25s ease;
+  transition:all 0.25s ease;
+}
+
+.bg-timeline {
+  height:340px;
+  width:100%;
+  vertical-align:top;
+  background-position:center;
+  background-size:auto 100%;
+  position:relative;
+}
+
+.cp-timeline {
+  padding:25px 20px 25px;
+  position:absolute;
+  width:100%;
+  bottom:0;
+  z-index:1;
+}
+
+.cp-timeline:before {
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  /*background:#700877;*/
+  background:rgba(255,255,255,0.46);
+  content:'';
+  background:-moz-linear-gradient(90deg, #700877 0%, #ff2759 100%, #ff2759 100%);
+  /*background:-webkit-linear-gradient(90deg, #700877 0%, #ff2759 100%, #ff2759 100%);*/
+  /*background:linear-gradient(90deg, #700877 0%, #ff2759 100%, #ff2759 100%);*/
+  opacity:0.8;
+  z-index:-1;
+}
+
+.date-timeline2 {
+  background-color:#9bff6b;
+  border-radius:50%;
+  color:#000000;
+  font-size:18px;
+  font-weight:700;
+  min-height:48px;
+  min-width:48px;
+  padding:10px 0;
+  position:absolute;
+  left:15px;
+  text-align:center;
+  text-transform:uppercase;
+  top:-25px;
+}
+
+.date-timeline {
+  background-color:#ff9090;
+  border-radius:50%;
+  color:#ffffff;
+  font-size:18px;
+  font-weight:700;
+  min-height:48px;
+  min-width:48px;
+  padding:10px 0;
+  position:absolute;
+  right:15px;
+  text-align:center;
+  text-transform:uppercase;
+  top:-25px;
+}
+
+.day-timeline {
+  display:block;
+  line-height:14px;
+}
+
+.month-timeline {
+  font-size:11px;
+  display:block;
+  line-height:14px;
+}
+
+.title-timeline, .case-timeline p {
+  margin:0;
+  padding:0;
+}
+
+.title-timeline {
+  display:inline-block;
+  font-weight:700;
+  letter-spacing:-0.4px;
+  margin-bottom:5px;
+}
+
+.case-timeline p {
+  font-size:0.8em;
+  line-height:1.6em;
+  margin-bottom:0px;
+}
+
+.case-timeline a {
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  position:absolute;
+  z-index:1;
+}
+
+.bg-timeline:hover {
+  -webkit-transform:scale(1.1);
+  transform:scale(1.1);
+}
+
+.btn-timeline {
+  width:100%;
+  border-radius:0px;
+  height:40px;
+}
+

@@ -1,0 +1,249 @@
+<!-- css desktop & mobile -->
+/*memanggil css id masih gagal*/
+/*wrapper gagal(awalnya id)*/
+/*css body (font gagal)*/
+body, html{
+  font-family: 'Montserrat', sans-serif;
+}
+.wrapper{
+ width: 100%;
+ background: #f3f3f3;
+}
+.info-box, .info-box-icon {
+  display: flex !important;
+}
+.info-box-icon {
+  justify-content: center !important;
+}
+ .info-box-icon {
+  align-items: center !important;
+}
+.info-box-icon {
+  border-radius: 0.25rem;
+  display: block;
+  width: 70px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.info-box-icon > img {
+  max-width: 100%;
+}
+.info-box-content {
+  padding: 5px 10px;
+  flex: 1;
+}
+.info-box-text {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.info-box-number {
+  display: block;
+  font-weight: 700;
+}
+.bg-primary, .label-primary {
+  background-color: #007bff !important;
+}
+
+a.bg-primary:hover, a.label-primary:hover, a.bg-primary:focus, a.label-primary:focus,
+button.bg-primary:hover,
+button.label-primary:hover,
+button.bg-primary:focus,
+button.label-primary:focus {
+  background-color: #0062cc !important;
+}
+
+.bg-secondary {
+  background-color: #6c757d !important;
+}
+
+a.bg-secondary:hover, a.bg-secondary:focus,
+button.bg-secondary:hover,
+button.bg-secondary:focus {
+  background-color: #545b62 !important;
+}
+
+.bg-success, .alert-success, .label-success {
+  background-color: #28a745 !important;
+}
+
+a.bg-success:hover, a.alert-success:hover, a.label-success:hover, a.bg-success:focus, a.alert-success:focus, a.label-success:focus,
+button.bg-success:hover,
+button.alert-success:hover,
+button.label-success:hover,
+button.bg-success:focus,
+button.alert-success:focus,
+button.label-success:focus {
+  background-color: #1e7e34 !important;
+}
+
+.bg-info, .alert-info, .label-info {
+  background-color: #17a2b8 !important;
+}
+
+a.bg-info:hover, a.alert-info:hover, a.label-info:hover, a.bg-info:focus, a.alert-info:focus, a.label-info:focus,
+button.bg-info:hover,
+button.alert-info:hover,
+button.label-info:hover,
+button.bg-info:focus,
+button.alert-info:focus,
+button.label-info:focus {
+  background-color: #117a8b !important;
+}
+
+.bg-warning, .alert-warning, .label-warning {
+  background-color: #ffc107 !important;
+}
+
+a.bg-warning:hover, a.alert-warning:hover, a.label-warning:hover, a.bg-warning:focus, a.alert-warning:focus, a.label-warning:focus,
+button.bg-warning:hover,
+button.alert-warning:hover,
+button.label-warning:hover,
+button.bg-warning:focus,
+button.alert-warning:focus,
+button.label-warning:focus {
+  background-color: #d39e00 !important;
+}
+
+.bg-danger, .alert-danger,
+.alert-error, .label-danger {
+  background-color: #dc3545 !important;
+}
+
+a.bg-danger:hover, a.alert-danger:hover,
+a.alert-error:hover, a.label-danger:hover, a.bg-danger:focus, a.alert-danger:focus,
+a.alert-error:focus, a.label-danger:focus,
+button.bg-danger:hover,
+button.alert-danger:hover,
+button.alert-error:hover,
+button.label-danger:hover,
+button.bg-danger:focus,
+button.alert-danger:focus,
+button.alert-error:focus,
+button.label-danger:focus {
+  background-color: #bd2130 !important;
+}
+
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+a.bg-light:hover, a.bg-light:focus,
+button.bg-light:hover,
+button.bg-light:focus {
+  background-color: #dae0e5 !important;
+}
+
+.bg-dark {
+  background-color: #343a40 !important;
+}
+
+a.bg-dark:hover, a.bg-dark:focus,
+button.bg-dark:hover,
+button.bg-dark:focus {
+  background-color: #1d2124 !important;
+}
+
+.bg-white {
+  background-color: #ffffff !important;
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+.navbar{
+  margin-bottom: 0px;
+}
+.navbar-default{
+  background: #537bbd;
+}
+.navbar-default .navbar-brand{
+  color: #f3f3f3;
+}
+
+.navbar-default .navbar-brand:hover{
+  color: #f3f3f3;
+}
+
+.navbar-default .navbar-brand:visited{
+  color: #f3f3f3;
+}
+
+.navbar-default .navbar-toggle .icon-brand{
+  background-color: #f3f3f3;
+}
+
+
+.navbar-side{
+  background: #FFFFFF;
+}
+.navbar-side .user{
+  padding: 20px;
+  text-align: center;
+
+}
+
+.navbar-side .user img{
+  width: 30%;
+}
+
+.navbar-side .user h3{
+
+  font-size: 22px;
+}
+.navbar-side ul li{
+  border-bottom: 1px solid #f3f3f3;
+}
+.navbar-side ul li:hover a{
+  color:#537bbd;
+}
+.navbar-side ul li a{
+  color: #537bbd;
+}
+.page-wrapper{
+  padding: 15px;
+  background: #f3f3f3;
+}
+.page-inner{
+  padding: 15px;
+  background: #FFFFFF;
+}
+.page-inner{
+  min-height: 1000px;
+}
+.page-inner .float-right a{
+  float-right;
+}
+.page-inner .form-group{
+  width: 70%;
+}
+.page-inner .input-group date .form-group{
+  width: 70%;
+}
+.button-edit{
+  color: white;
+  background: #00A6FF; 
+}
+.button-delete{
+  color: white;
+  background: #FF061A;
+}
+/*spesifik css ke desktop*/
+@media(min-width: 768px){
+  .page-wrapper{
+    margin: 0 0 0 260px;
+    padding: 15px;
+    min-height: 1000px;
+  }
+  .navbar-side{
+    width: 260px;
+    position: absolute;
+    z-index: 1;
+    min-height: 1000px;
+  }
+}
+
+
