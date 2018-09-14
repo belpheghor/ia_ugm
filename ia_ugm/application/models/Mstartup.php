@@ -5,7 +5,7 @@ class Mstartup extends CI_Model {
 
 	function tampil_startup() 
 	{
-		$this->db->join('startup_founder', 'startup_founder.startup_id = startup.startup_id', 'left');
+		// $this->db->join('startup_founder', 'startup_founder.startup_id = startup.startup_id', 'left');
 		$ambil_startup = $this->db->get('startup');
 		$pecah_startup = $ambil_startup->result_array();
 		return $pecah_startup;

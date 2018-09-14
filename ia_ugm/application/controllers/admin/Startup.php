@@ -7,6 +7,7 @@ class Startup extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Mstartup');
+	
 	}
 	public function index()
 	{

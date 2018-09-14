@@ -55,6 +55,7 @@ class Background extends CI_Controller {
 	}
 	function select($id){
 		$this->Mbackground->select_background($id);
+		redirect('admin/background','refresh');
 	}
 }
 

@@ -10,7 +10,7 @@
 	</div>
 	 <div class="form-group">
 		<label>Existing Image</label>
-		<img src="<?php echo base_url("assets/startup/$startup[startup_image]") ?>">
+		<img width="100" src="<?php echo base_url("assets/startup/$startup[startup_image]") ?>">
 		
 	</div>
 	<div class="form-group">

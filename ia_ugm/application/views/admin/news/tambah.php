@@ -27,13 +27,13 @@
 			
 		</select>
 		</div>
-		<!-- <div class="form-group">
+		<div class="form-group">
 			<label>Tag</label>
 			<?php foreach ($tag as $key => $value): ?>
-				[] untuk isi index tag_id karena data array & lebih dari satu
+				<!-- [] untuk isi index tag_id karena data array & lebih dari satu -->
 				<input type="checkbox" name="tag_id[]" value="<?php echo $value['tag_id']; ?>"> <?php echo $value['tag_name']; ?>
 			<?php endforeach ?>
-		</div> -->
+		</div>
 		<div class="form-group">
 			<label>News Title</label>
 			<input type="text" name="news_title" class="form-control">

@@ -1,15 +1,15 @@
 <h3><b>Form News</b></h3>
 <hr>
 
-<!-- <?php 
+<?php 
 foreach ($news as $key => $value) {
 	$tag_id[] = $value['tag_id'];
 }
 foreach ($tag as $key => $value) {
 	$semua_tag_id[] = $value['tag_id'];
 }
- ?> --><!-- 
- <?php $image = $news ?> -->
+ ?>
+ <?php $image = $news[0] ?>
 <form method="post" enctype="multipart/form-data"> 
 	<div class="form-group">
 		<label>User</label>
@@ -37,19 +37,19 @@ foreach ($tag as $key => $value) {
 		</select>
 		
 	</div>
-	<!-- <div class="form-group">
+	<div class="form-group">
 		<label>Tag</label>
 		<?php foreach ($tag as $key => $value): ?>
 			<input type="checkbox" name="tag_id[]" value="<?php echo $value['tag_id']; ?>" <?php if (in_array($semua_tag_id[$key],$tag_id)) {
 				echo "checked";
 			} ?>><?php echo $value['tag_name']; ?>
 		<?php endforeach ?>
-	</div> -->
+	</div>
 	<div class="form-group">
 		<label>News Title</label>
 		<div>
 			<input type="text" name="news_title" class="form-control"
-			value="<?php echo $news['news_title'] ?>">
+			value="<?php echo $news[0]['news_title'] ?>">
 		</div>
 	</div>
 	<div class="form-group">
@@ -99,17 +99,17 @@ foreach ($tag as $key => $value) {
 	<div class="form-group"> 
 		<label>News Release</label>
 		<input type="date" name="news_release" class="form-control"
-		value="<?php echo $news['news_release'] ?>">
+		value="<?php echo $news[0]['news_release'] ?>">
 	</div>
 	<div class="form-group">
 		<label>News Summary</label>
 		<textarea name="news_summary" class="form-control"
-		><?php echo $news['news_summary'] ?></textarea>	
+		><?php echo $news[0]['news_summary'] ?></textarea>	
 	</div>
 	<div class="form-group">
 		<label>News Content</label>
 		<textarea name="news_content" class="form-control" id="theeditor">
-			<?php echo $news['news_content'] ?>
+			<?php echo $news[0]['news_content'] ?>
 		</textarea>
 		
 	</div>

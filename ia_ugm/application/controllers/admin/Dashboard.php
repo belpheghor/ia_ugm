@@ -17,7 +17,7 @@ class Dashboard extends CI_Controller {
    		$this->load->database();
   	}
 
-	public function index()
+	public function index2()
 	{
 		$data['login'] = $this->session->userdata("admin");
 		//initialize google analytics
@@ -84,7 +84,7 @@ class Dashboard extends CI_Controller {
 		$this->load->view('admin/footer');
 	}
 
-	public function index2()
+	public function index()
 	{
 		$data['login'] = $this->session->userdata("admin");
 		$this->load->view('admin/header', $data);

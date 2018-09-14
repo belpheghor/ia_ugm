@@ -12,6 +12,7 @@
 				<th>No</th>
 				<th>News Title</th>
 				<th>Tag</th>
+				<th>Status</th>
 				<th>Option</th>
 			</tr>
 		</thead>
@@ -22,9 +23,26 @@
 					<td><?php echo $value['news_title']; ?></td>
 					<td><?php echo $value['tag_name']; ?></td>
 					<td>
-						<a href="<?php echo base_url("admin/news_tag/edit/$value[newstag_id]") ?>" class="btn btn-info btn-sm"> Edit</a>
-						<a href="<?php echo base_url("admin/news_tag/delete/$value[newstag_id]") ?>" class="btn btn-danger btn-sm">Delete</a>
-					</td>
+ 						<?php if ($value['newstag_status']=="Pending"): ?>
+ 							<span style="color: red"><?php echo $value['newstag_status'] ?></span>
+ 						<?php endif ?>
+ 						<?php if ($value['newstag_status']=="Accepted"): ?>
+ 							<span style="color: green">Accepted</span>
+ 							
+ 						<?php endif ?>
+ 					</td> 
+ 					<td>
+ 						<a href="<?php echo base_url("admin/news_tag/edit/$value[newstag_id]") ?>"
+ 							class="btn btn-info btn-xs">Edit</a>
+ 						<a href="<?php echo base_url("admin/news_tag/delete/$value[newstag_id]") ?>" class="btn btn-danger btn-xs">Delete</a>
+ 						<?php if ($value['newstag_status']!="Pending"): ?>
+ 							<a href="<?php echo base_url("admin/news_tag/status/$value[newstag_id]") ?>" class="btn btn-success btn-xs disabled">Accept</a>
+ 						<?php else: ?>
+ 							<a href="<?php echo base_url("admin/news_tag/status/$value[newstag_id]") ?>" class="btn btn-success btn-xs">Accept</a>
+ 							
+ 						<?php endif ?>
+
+ 					</td>
 				</tr>
 			<?php endforeach ?>
 		</tbody>

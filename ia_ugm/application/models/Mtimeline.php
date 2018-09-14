@@ -5,7 +5,15 @@ class Mtimeline extends CI_Model {
 	function tampil_timeline(){
 		
 		$this->db->join('program', 'timeline.program_id = program.program_id', 'left');
+		$this->db->order_by('program.program_level', 'asc');
 		$this->db->limit('4');
+		$ambil_timeline = $this->db->get('timeline');
+		$pecah_timeline = $ambil_timeline->result_array();
+		return $pecah_timeline;
+	}
+	function tampil_timeline2(){
+		
+		$this->db->join('program', 'timeline.program_id = program.program_id', 'left');
 		$ambil_timeline = $this->db->get('timeline');
 		$pecah_timeline = $ambil_timeline->result_array();
 		return $pecah_timeline;

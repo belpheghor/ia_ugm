@@ -12,7 +12,7 @@ class Timeline extends CI_Controller {
 	public function index()
 	{
 		$data['login'] = $this->session->userdata("admin");
-		$data['timeline']= $this->Mtimeline->tampil_timeline();
+		$data['timeline']= $this->Mtimeline->tampil_timeline2();
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/timeline/tampil', $data);
 		$this->load->view('admin/footer');

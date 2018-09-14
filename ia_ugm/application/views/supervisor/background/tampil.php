@@ -16,7 +16,7 @@
 			<tr>
 				<td><?php echo $key+1 ?></td>
 				<td>
-					<img src="<?php echo base_url("assets/background/$value[background_img]") ?>">
+					<img width="100" src="<?php echo base_url("assets/background/$value[background_img]") ?>">
 				</td>
 				<td>
 					<a href="<?php echo base_url("") ?>" class="btn btn-warning btn-sm">Detail</a>

@@ -3,7 +3,7 @@
 <form method="post" enctype="multipart/form-data">
 	<div class="form-group">
 				<label>Existing Image</label>
-				<img src="<?php echo base_url("assets/background/$background[background_img]") ?>">
+				<img width="100" src="<?php echo base_url("assets/background/$background[background_img]") ?>">
 			</div>
 			<div class="form-group">
 				<label>New image</label>

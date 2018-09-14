@@ -10,11 +10,18 @@ class Mprogram extends CI_Model {
 		$pecah_program = $ambil_program->result_array();
 		return $pecah_program;
 	}
+	function tampil_program2(){
+		
+	
+		$ambil_program = $this->db->get('program');
+		$pecah_program = $ambil_program->result_array();
+		return $pecah_program;
+	}
 	function simpan_program($input)
 	{
 		$config['upload_path']          = './assets/program/';
 		$config['allowed_types']        = 'gif|jpg|png|PNG';
-
+ 
 	// panggil library ->yg bertindak utk upload 
 		$this->load->library("upload",$config);
 		// bagian upload. function do_upload( berfungsi untuk mengupload)

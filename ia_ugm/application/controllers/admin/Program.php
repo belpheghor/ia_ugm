@@ -14,7 +14,7 @@ class Program extends CI_Controller {
 	public function index()
 	{
 		$data['login'] = $this->session->userdata("admin");
-		$data['program']= $this->Mprogram->tampil_program();
+		$data['program']= $this->Mprogram->tampil_program2();
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/program/tampil', $data);
 		$this->load->view('admin/footer');

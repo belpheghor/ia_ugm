@@ -1,5 +1,5 @@
-<h1 class="text-left ia-title">Background</h1>
-
+<h3><b>Background</b></h3>
+<hr>
 <a href="<?php echo base_url("admin/background/add") ?>" class="btn btn-success btn-sm">Create New</a> 
 <br>
 <br>
@@ -17,7 +17,7 @@
 			<tr>
 				<td><?php echo $key+1 ?></td>
 				<td>
-					<img width="100%" src="<?php echo base_url("assets/background/$value[background_img]") ?>">
+					<img width="100" src="<?php echo base_url("assets/background/$value[background_img]") ?>">
 				</td>
 				<td>
 					<?php if ($value['background_status']=="selected"): ?>
