@@ -10,7 +10,8 @@
  				<th>Username</th>
  				<th>Email</th>
  				<th>Level</th>
- 				<th>Status</th>
+<!--  				<th>Approve Status</th>
+ --> 				<th>Status</th>
  				<th>Option</th>
  			</tr>
  		</thead>

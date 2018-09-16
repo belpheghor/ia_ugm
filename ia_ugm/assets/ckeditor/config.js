@@ -11,6 +11,7 @@ CKEDITOR.editorConfig = function( config ) {
 
 CKEDITOR.editorConfig = function(config) {
 // ...
+// kalau di hosting https://namadomain;
    config.filebrowserBrowseUrl = 'http://localhost/ia_ugm/assets/kcfinder/browse.php?type=files';
    config.filebrowserImageBrowseUrl = 'http://localhost/ia_ugm/assets/kcfinder/browse.php?type=images';
    config.filebrowserFlashBrowseUrl = 'http://localhost/ia_ugm/assets/kcfinder/browse.php?type=flash';
