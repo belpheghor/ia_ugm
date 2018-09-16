@@ -11,7 +11,7 @@
  				<th>Program Name</th>
  				<th>Timeline Start</th>
  				<th>Timeline End</th>
- 				<th>Status</th>
+ 				<th>Requested Permission</th>
  				<th>Option</th>
  			</tr>
  		</thead>
@@ -33,15 +33,18 @@
  						<?php endif ?>
  					</td> 
  					<td>
+ 						<?php if ($value['timeline_status']!="Pending"): ?>
+ 							<a href="<?php echo base_url("admin/timeline/status/$value[timeline_id]") ?>" class="btn btn-success btn-xs hidden">Accept</a>
+ 						<?php else: ?>
+ 							<a href="<?php echo base_url("admin/timeline/status/$value[timeline_id]") ?>" class="btn btn-success btn-xs">Accept</a>
+ 							<?php endif ?>
+ 						<a href="<?php echo base_url("#timeline"); ?>" class="btn btn-warning btn-xs">Detail</a>
  						<a href="<?php echo base_url("admin/timeline/edit/$value[timeline_id]") ?>"
  							class="btn btn-info btn-xs">Edit</a>
  						<a href="<?php echo base_url("admin/timeline/delete/$value[timeline_id]") ?>" class="btn btn-danger btn-xs">Delete</a>
- 						<?php if ($value['timeline_status']!="Pending"): ?>
- 							<a href="<?php echo base_url("admin/timeline/status/$value[timeline_id]") ?>" class="btn btn-success btn-xs disabled">Accept</a>
- 						<?php else: ?>
- 							<a href="<?php echo base_url("admin/timeline/status/$value[timeline_id]") ?>" class="btn btn-success btn-xs">Accept</a>
+ 						
  							
- 						<?php endif ?>
+ 						
 
  					</td>
  				</tr>

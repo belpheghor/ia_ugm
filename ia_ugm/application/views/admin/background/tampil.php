@@ -9,6 +9,7 @@
 			<th>No</th>
 			<th>Image</th>
 			<th>Background Status</th>
+			<th>Requested Permission Status</th>
 			<th>Option</th>
 		</tr>
 	</thead>
@@ -27,11 +28,28 @@
 					<?php endif ?>
 				</td>
 				<td>
-					<a href="<?php echo base_url("") ?>" class="btn btn-warning btn-sm">Detail</a>
-					<a href="<?php echo base_url("admin/background/edit/$value[background_id]") ?>" class="btn btn-info">Edit</a>
-					<a href="<?php echo base_url("admin/background/delete/$value[background_id]") ?>" class="btn btn-danger btn-sm">Delete</a>
-					<a href="<?php echo base_url("admin/background/select/$value[background_id]") ?>" class="btn btn-default">Select</a>
-				</td>
+ 						<?php if ($value['permission_status']=="Pending"): ?>
+ 							<span style="color: red"><?php echo $value['permission_status'] ?></span>
+ 						<?php endif ?>
+ 						<?php if ($value['permission_status']=="Accepted"): ?>
+ 							<span style="color: green">Accepted</span>
+ 							
+ 						<?php endif ?>
+ 					</td> 
+ 					<td>
+ 						<?php if ($value['permission_status']!="Pending"): ?>
+ 							<a href="<?php echo base_url("admin/background/status/$value[background_id]") ?>" class="btn btn-success btn-xs hidden">Accept</a>
+ 						<?php else: ?>
+ 							<a href="<?php echo base_url("admin/background/status/$value[background_id]") ?>" class="btn btn-success btn-xs">Accept</a>
+ 							
+ 						<?php endif ?>
+ 						<a href="<?php echo base_url(""); ?>" class="btn btn-warning btn-xs">Detail</a>
+ 						<a href="<?php echo base_url("admin/background/edit/$value[background_id]") ?>"
+ 							class="btn btn-info btn-xs">Edit</a>
+ 						<a href="<?php echo base_url("admin/background/delete/$value[background_id]") ?>" class="btn btn-danger btn-xs">Delete</a>
+ 						<a href="<?php echo base_url("admin/background/select/$value[background_id]") ?>" class="btn btn-default btn-xs">Select</a>
+
+ 					</td>
 				
 			</tr>
 			

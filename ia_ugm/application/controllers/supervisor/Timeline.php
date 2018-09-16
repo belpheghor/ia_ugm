@@ -12,7 +12,7 @@ class Timeline extends CI_Controller {
 	public function index()
 	{
 		$data['login'] = $this->session->userdata("supervisor");
-		$data['timeline']= $this->Mtimeline->tampil_timeline();
+		$data['timeline']= $this->Mtimeline->tampil_timeline2();
 		$this->load->view('supervisor/header', $data);
 		$this->load->view('supervisor/timeline/tampil', $data);
 		$this->load->view('supervisor/footer');
@@ -61,7 +61,7 @@ class Timeline extends CI_Controller {
 	}
 	function status($id)
 	{
-		$this->Mtimeline->select_timeline($id);
+		$this->Mtimeline->ubah_status_timeline($id);
 		redirect('supervisor/timeline','refresh');
 	}
 

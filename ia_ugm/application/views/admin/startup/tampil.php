@@ -1,10 +1,6 @@
  	<h3><b>Startup Data</b></h3>
  	<hr>
- 	<?php 
- 	echo "<pre>";
- 	print_r ($startup);
- 	echo "</pre>";
- 	 ?>
+
  	<a href="<?php echo base_url("admin/startup/add") ?>" class="btn btn-success btn-sm">Create New</a>
  	<br>
  	<br>
@@ -26,8 +22,8 @@
  					<td><?php echo $value['startup_weburl']; ?></td>
  					<td><?php echo $value['startup_status']; ?></td>
  					<td>
- 						<a href="<?php echo base_url(""); ?>" class="btn btn-warning btn-sm">Detail</a>
- 						<a href="<?php echo base_url("admin/startup/edit/$value[startup_id]"); ?>" class="btn btn-info">Edit</a>
+ 						<a href="<?php echo base_url("#startup"); ?>" class="btn btn-warning btn-sm">Detail</a>
+ 						<a href="<?php echo base_url("admin/startup/edit/$value[startup_id]"); ?>" class="btn btn-info btn-sm">Edit</a>
  						<a href="<?php echo base_url("admin/startup/delete/$value[startup_id]"); ?>" class="btn btn-danger btn-sm">Delete</a>
  					</td> 
  				</tr>

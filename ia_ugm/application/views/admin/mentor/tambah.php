@@ -34,33 +34,35 @@
 		<input type="text" name="person_website" class="form-control">
 	</div>
 	
-	 <div class="form-group">
-	 	<label>Mentor Image</label>
-	 	<input type="file" name="person_image" class="form-control" required="">
-	 </div>
-	 <div class="form-group">
-	 	<label>Mentor Description</label>
-	 	<textarea class="form-control" required="" name="person_description"></textarea>
-	 </div>
-	 <div class="form-group">
-	 	<label>Mentor Linkedin</label>
-	 	<input type="text" name="person_linkedin" class="form-control">
-	 </div>
-	 <div class="form-group">
-	 	<label>Mentor Priority</label>
-	 	<select class="form-control" name="person_priority">
-				<option>- Priority Level -</option>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
+	<div class="form-group">
+		<label>Mentor Image</label>
+		<input type="file" name="person_image" class="form-control" required="">
+		<p><small style="color: red">*use 1:1 scale image for better resolution</small></p>
 
-			</select>
-	 </div>
-	 <div class="form-group">
-	 	<label>Position</label>
-	 	<input type="text" name="person_level" value="mentor" readonly="" class="form-control">
-	 </div>
-	 <button class="btn btn-info ">Submit</button>
-	 <a href="<?php echo base_url("admin/mentor") ?>" class="btn btn-danger ">Cancel</a>
+	</div>
+	<div class="form-group">
+		<label>Mentor Description</label>
+		<textarea class="form-control" required="" name="person_description"></textarea>
+	</div>
+	<div class="form-group">
+		<label>Mentor Linkedin</label>
+		<input type="text" name="person_linkedin" class="form-control">
+	</div>
+	<div class="form-group">
+		<label>Mentor Priority</label>
+		<select class="form-control" name="person_priority">
+			<option>- Priority Level -</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+
+		</select>
+	</div>
+	<div class="form-group">
+		<label>Position</label>
+		<input type="text" name="person_level" value="mentor" readonly="" class="form-control">
+	</div>
+	<button class="btn btn-info ">Submit</button>
+	<a href="<?php echo base_url("admin/mentor") ?>" class="btn btn-danger ">Cancel</a>
 </form>

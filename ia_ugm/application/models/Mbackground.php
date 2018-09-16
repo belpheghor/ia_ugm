@@ -73,6 +73,22 @@ class Mbackground extends CI_Model {
 			$pecah = $ambil->row_array();
 			return $pecah;
 		}
+		function ubah_status_background($id)
+	{
+		$status="";
+		$data['permission_status']="Pending";
+		$this->db->query("UPDATE background SET permission_status='$status' WHERE background_id !='$id'");
+		$this->db->where('background_id', $id);
+		$this->db->update('background', $data);
+	}
+	function select_status_background($id)
+	{
+		$status="";
+		$data['permission_status']="Accepted";
+		$this->db->query("UPDATE background SET permission_status='$status' WHERE background_id !='$id'");
+		$this->db->where('background_id', $id);
+		$this->db->update('background', $data);
+	}
 	
 
 }
