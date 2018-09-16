@@ -38,8 +38,8 @@
  					<td>
  						
  							<a href="<?php echo base_url(""); ?>" class="btn btn-warning btn-xs">Detail</a>
- 							<a href="<?php echo base_url("supervisor/background/edit/$value[background_id]") ?>"
- 							class="btn btn-info btn-xs">Edit</a>
+ 							<!-- <a href="<?php echo base_url("supervisor/background/edit/$value[background_id]") ?>"
+ 							class="btn btn-info btn-xs">Edit</a> -->
  							
  							<a href="<?php echo base_url("supervisor/background/select/$value[background_id]") ?>" class="btn btn-default btn-xs">Select</a>
  							<?php if ($value['permission_status']=="Accepted"): ?>

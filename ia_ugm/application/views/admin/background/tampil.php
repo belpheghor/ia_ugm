@@ -44,8 +44,8 @@
  							
  						<?php endif ?>
  						<a href="<?php echo base_url(""); ?>" class="btn btn-warning btn-xs">Detail</a>
- 						<a href="<?php echo base_url("admin/background/edit/$value[background_id]") ?>"
- 							class="btn btn-info btn-xs">Edit</a>
+ 						<!-- <a href="<?php echo base_url("admin/background/edit/$value[background_id]") ?>"
+ 							class="btn btn-info btn-xs">Edit</a> -->
  						<a href="<?php echo base_url("admin/background/delete/$value[background_id]") ?>" class="btn btn-danger btn-xs">Delete</a>
  						<a href="<?php echo base_url("admin/background/select/$value[background_id]") ?>" class="btn btn-default btn-xs">Select</a>
 
