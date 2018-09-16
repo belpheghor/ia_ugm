@@ -59,6 +59,12 @@ class Program extends CI_Controller {
 		$this->load->view('admin/program/ubah', $data);
 		$this->load->view('admin/footer');
 	}
+	function status($id)
+	{
+		$this->Mprogram->select_program($id);
+		redirect('admin/program','refresh');
+	}
+
 }
 
 

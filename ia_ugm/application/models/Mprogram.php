@@ -69,6 +69,23 @@ class Mprogram extends CI_Model {
 		$this->db->where('program_id', $id);
 		$this->db->update('program', $input);
 	}
+	function ubah_status_program($id)
+	{
+		$status="";
+		$data['program_status']="Pending";
+		$this->db->query("UPDATE program SET program_status='$status' WHERE program_id !='$id'");
+		$this->db->where('program_id', $id);
+		$this->db->update('program', $data);
+	}
+	function select_program($id)
+	{
+		$status="";
+		$data['program_status']="Accepted";
+		$this->db->query("UPDATE program SET program_status='$status' WHERE program_id !='$id'");
+		$this->db->where('program_id', $id);
+		$this->db->update('program', $data);
+	}
+	
 	
 
 }

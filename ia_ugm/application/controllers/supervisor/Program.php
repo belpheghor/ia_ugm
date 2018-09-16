@@ -14,7 +14,7 @@ class Program extends CI_Controller {
 	public function index()
 	{
 		$data['login'] = $this->session->userdata("supervisor");
-		$data['program']= $this->Mprogram->tampil_program();
+		$data['program']= $this->Mprogram->tampil_program2();
 		$this->load->view('supervisor/header', $data);
 		$this->load->view('supervisor/program/tampil', $data);
 		$this->load->view('supervisor/footer');
@@ -59,6 +59,12 @@ class Program extends CI_Controller {
 		$this->load->view('supervisor/program/ubah', $data);
 		$this->load->view('supervisor/footer');
 	}
+	function status($id)
+	{
+		$this->Mprogram->ubah_status_program($id);
+		redirect('supervisor/program','refresh');
+	}
+
 }
 
 

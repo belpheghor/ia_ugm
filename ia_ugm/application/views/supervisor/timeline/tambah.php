@@ -35,7 +35,7 @@
 		<label>Timeline Image</label>
 		
 		<input type="file" name="timeline_image" class="form-control" required="">		
-
+		<p><small style="color: red">*use 3:4 ratio image for better resolution</small></p>
 		
 	</div>
 	<div class="form-group">
