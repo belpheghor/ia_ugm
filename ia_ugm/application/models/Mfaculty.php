@@ -34,6 +34,22 @@ class Mfaculty extends CI_Model {
 		$this->db->where('faculty_id', $id);
 		$this->db->update('faculty', $inputan);
 	}
+	function ubah_status_faculty($id)
+	{
+		$status="";
+		$data['faculty_status']="Pending";
+		$this->db->query("UPDATE faculty SET faculty_status='$status' WHERE faculty_id !='$id'");
+		$this->db->where('faculty_id', $id);
+		$this->db->update('faculty', $data);
+	}
+	function select_faculty($id)
+	{
+		$status="";
+		$data['faculty_status']="Accepted";
+		$this->db->query("UPDATE faculty SET faculty_status='$status' WHERE faculty_id !='$id'");
+		$this->db->where('faculty_id', $id);
+		$this->db->update('faculty', $data);
+	}
 }
 
 	/* End of file Mfaculty.php */

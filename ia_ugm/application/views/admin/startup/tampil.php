@@ -22,10 +22,29 @@
  					<td><?php echo $value['startup_weburl']; ?></td>
  					<td><?php echo $value['startup_status']; ?></td>
  					<td>
- 						<a href="<?php echo base_url("#startup"); ?>" class="btn btn-warning btn-sm">Detail</a>
- 						<a href="<?php echo base_url("admin/startup/edit/$value[startup_id]"); ?>" class="btn btn-info btn-sm">Edit</a>
- 						<a href="<?php echo base_url("admin/startup/delete/$value[startup_id]"); ?>" class="btn btn-danger btn-sm">Delete</a>
+ 						<?php if ($value['permission_status']=="Pending"): ?>
+ 							<span style="color: red"><?php echo $value['permission_status'] ?></span>
+ 						<?php endif ?>
+ 						<?php if ($value['permission_status']=="Accepted"): ?>
+ 							<span style="color: green">Accepted</span>
+ 							
+ 						<?php endif ?>
  					</td> 
+ 					<td>
+ 						<?php if ($value['permission_status']!="Pending"): ?>
+ 							<a href="<?php echo base_url("admin/startup/status/$value[startup_id]") ?>" class="btn btn-success btn-xs hidden">Accept</a>
+ 						<?php else: ?>
+ 							<a href="<?php echo base_url("admin/startup/status/$value[startup_id]") ?>" class="btn btn-success btn-xs">Accept</a>
+ 							<?php endif ?>
+ 						<a href="<?php echo base_url("#startup"); ?>" class="btn btn-warning btn-xs">Detail</a>
+ 						<a href="<?php echo base_url("admin/startup/edit/$value[startup_id]") ?>"
+ 							class="btn btn-info btn-xs">Edit</a>
+ 						<a href="<?php echo base_url("admin/startup/delete/$value[startup_id]") ?>" class="btn btn-danger btn-xs">Delete</a>
+ 						
+ 							
+ 						
+
+ 					</td>
  				</tr>
 
  			<?php endforeach ?>

@@ -1,5 +1,6 @@
  	<h3><b>Startup Data</b></h3>
  	<hr>
+
  	<a href="<?php echo base_url("supervisor/startup/add") ?>" class="btn btn-success btn-sm">Create New</a>
  	<br>
  	<br>
@@ -10,7 +11,7 @@
  				<th>Startup Name</th>
  				<th>Link</th>
  				<th>Status</th>
- 				<th>Founder</th>
+ 				<th>Requested Permission</th>
  				<th>Option</th>
  			</tr>
  		</thead>
@@ -20,13 +21,27 @@
  					<td><?php echo $key+1; ?></td>
  					<td><?php echo $value['startup_name']; ?></td>
  					<td><?php echo $value['startup_weburl']; ?></td>
- 					<td><?php echo $value['startup_status'] ?></td>
- 					<td>x</td>
+ 					<td><?php echo $value['startup_status']; ?></td>
  					<td>
- 						<a href="<?php echo base_url("") ?>" class="btn btn-warning btn-sm">Detail</a>
- 						<a href="<?php echo base_url("supervisor/startup/edit/$value[startup_id]") ?>" class="btn btn-info">Edit</a>
- 						<a href="<?php echo base_url("supervisor/startup/delete/$value[startup_id]") ?>" class="btn btn-danger btn-sm">Delete</a>
- 					</td> 
+ 						 <?php if ($value['permission_status']=="Pending"): ?>
+ 						 	<span style="color: red">Pending</span>
+ 						 <?php endif ?>
+ 						 <?php if ($value['permission_status']=='Accepted'): ?>
+ 						 	<span style="color: green">Accepted</span>
+ 						 <?php endif ?>
+ 					</td>
+ 					<td>
+ 							<a href="<?php echo base_url("#startup"); ?>" class="btn btn-warning btn-xs">Detail</a>
+ 							<a href="<?php echo base_url("supervisor/startup/edit/$value[startup_id]") ?>" class="btn btn-info btn-xs"> Edit</a>
+ 							<?php if ($value['permission_status']=="Accepted"): ?>
+ 							<a href="<?php echo base_url("supervisor/startup/delete/$value[startup_id]") ?>" class="btn btn-danger btn-xs">Delete</a>
+ 							
+ 						<?php endif ?>
+ 						<?php if ($value['permission_status']==""): ?>
+
+ 							<a href="<?php echo base_url("supervisor/startup/status/$value[startup_id]") ?>" class="btn btn-success btn-xs">Ask Permission</a>
+ 						<?php endif ?>
+ 					</td>
  				</tr>
 
  			<?php endforeach ?>

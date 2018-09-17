@@ -7,11 +7,17 @@ class Startup_founder extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Mstartup_founder');
-	}
+		$this->load->model('Mstartup');
+		$this->load->model('Mmajor');
+		$this->load->model('Mfaculty');
+	} 
 	public function index()
 	{
 		$data['login'] = $this->session->userdata("supervisor");
 		$data['startup_founder'] = $this->Mstartup_founder->tampil_startup_founder();
+		$data['startup'] = $this->Mstartup->tampil_startup();
+		$data['major']=$this->Mmajor->tampil_jurusan();
+		$data['faculty']=$this->Mfaculty->tampil_fakultas();
 		$this->load->view('supervisor/header', $data);
 		$this->load->view('supervisor/startup_founder/tampil', $data);
 		$this->load->view('supervisor/footer');
@@ -27,6 +33,9 @@ class Startup_founder extends CI_Controller {
 
 		}
 		$data['login'] = $this->session->userdata("supervisor");
+		$data['startup'] = $this->Mstartup->tampil_startup();
+		$data['major']=$this->Mmajor->tampil_jurusan();
+		$data['faculty']=$this->Mfaculty->tampil_fakultas();
 		$this->load->view('supervisor/header', $data);
 		$this->load->view('supervisor/startup_founder/tambah');
 		$this->load->view('supervisor/footer');
@@ -45,11 +54,21 @@ class Startup_founder extends CI_Controller {
 			redirect('supervisor/startup_founder','refresh');
 		}
 		//bagian pengambilan data dari function ambil_data()
+		$data['login'] = $this->session->userdata("supervisor");
 		$data['startup_founder'] = $this->Mstartup_founder->ambil_data($id);
-		$this->load->view('supervisor/header');
+		$data['startup'] = $this->Mstartup->tampil_startup();
+		$data['major']=$this->Mmajor->tampil_jurusan();
+		$data['faculty']=$this->Mfaculty->tampil_fakultas();
+		$this->load->view('supervisor/header', $data);
 		$this->load->view('supervisor/startup_founder/ubah', $data);
 		$this->load->view('supervisor/footer');
 	}
+	function status($id)
+	{
+		$this->Mstartup_founder->ubah_status_sf($id);
+		redirect('supervisor/startup_founder','refresh');
+	}
+
 
 }
 

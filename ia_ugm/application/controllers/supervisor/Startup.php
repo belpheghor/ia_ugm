@@ -7,6 +7,7 @@ class Startup extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Mstartup');
+	
 	}
 	public function index()
 	{
@@ -15,6 +16,10 @@ class Startup extends CI_Controller {
 		$this->load->view('supervisor/header',$data);
 		$this->load->view('supervisor/startup/tampil', $data);
 		$this->load->view('supervisor/footer');
+
+		// echo "<pre>";
+		// echo print_r($data['startup']);
+		// echo "</pre>";
 	}
 	function add()
 	{
@@ -53,6 +58,12 @@ class Startup extends CI_Controller {
 		$this->load->view('supervisor/startup/ubah', $data);
 		$this->load->view('supervisor/footer');
 	}
+	function status($id)
+	{
+		$this->Mstartup->ubah_status_startup($id);
+		redirect('supervisor/startup','refresh');
+	}
+
 
 }
 

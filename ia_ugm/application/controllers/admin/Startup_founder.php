@@ -66,7 +66,7 @@ class Startup_founder extends CI_Controller {
 	function status($id)
 	{
 		$this->Mstartup_founder->select_sf($id);
-		redirect('admin/timeline','refresh');
+		redirect('admin/startup_founder','refresh');
 	}
 
 }

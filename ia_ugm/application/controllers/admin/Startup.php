@@ -58,6 +58,11 @@ class Startup extends CI_Controller {
 		$this->load->view('admin/startup/ubah', $data);
 		$this->load->view('admin/footer');
 	}
+	function status($id)
+	{
+		$this->Mstartup->select_startup($id);
+		redirect('admin/startup','refresh');
+	}
 
 }
 

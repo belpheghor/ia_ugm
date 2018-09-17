@@ -36,6 +36,22 @@ class Mmajor extends CI_Model {
 		$this->db->where('major_id', $id);
 		$this->db->update('major', $inputan);
 	}
+	function ubah_status_major($id)
+	{
+		$status="";
+		$data['major_status']="Pending";
+		$this->db->query("UPDATE major SET major_status='$status' WHERE major_id !='$id'");
+		$this->db->where('major_id', $id);
+		$this->db->update('major', $data);
+	}
+	function select_major($id)
+	{
+		$status="";
+		$data['major_status']="Accepted";
+		$this->db->query("UPDATE major SET major_status='$status' WHERE major_id !='$id'");
+		$this->db->where('major_id', $id);
+		$this->db->update('major', $data);
+	}
 }
 
 	/* End of file Mmajor.php */

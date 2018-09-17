@@ -60,6 +60,22 @@ class Mstartup extends CI_Model {
 		$this->db->where('startup_id', $id);
 		$this->db->update('startup', $input);
 	}
+	function ubah_status_startup($id)
+	{
+		$status="";
+		$data['permission_status']="Pending";
+		$this->db->query("UPDATE startup SET permission_status='$status' WHERE startup_id !='$id'");
+		$this->db->where('startup_id', $id);
+		$this->db->update('startup', $data);
+	}
+	function select_startup($id)
+	{
+		$status="";
+		$data['permission_status']="Accepted";
+		$this->db->query("UPDATE startup SET permission_status='$status' WHERE startup_id !='$id'");
+		$this->db->where('startup_id', $id);
+		$this->db->update('startup', $data);
+	}
 
 }
 

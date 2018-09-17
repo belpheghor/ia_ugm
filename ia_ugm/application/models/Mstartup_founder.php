@@ -69,7 +69,7 @@ class Mstartup_founder extends CI_Model {
 		$data['sf_status']="Pending";
 		$this->db->query("UPDATE startup_founder SET sf_status='$status' WHERE sf_id !='$id'");
 		$this->db->where('sf_id', $id);
-		$this->db->update('sf', $data);
+		$this->db->update('startup_founder', $data);
 	}
 	function select_sf($id)
 	{
@@ -77,7 +77,7 @@ class Mstartup_founder extends CI_Model {
 		$data['sf_status']="Accepted";
 		$this->db->query("UPDATE startup_founder SET sf_status='$status' WHERE sf_id !='$id'");
 		$this->db->where('sf_id', $id);
-		$this->db->update('sf', $data);
+		$this->db->update('startup_founder', $data);
 	}
 	
 
