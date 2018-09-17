@@ -56,6 +56,9 @@
       <ul class="ia-tree-menu">
        <li><a href="<?php echo base_url("admin/startup") ?>"> Startup</a></li>
        <li><a href="<?php echo base_url("admin/startup_founder") ?>"> Startup Founder</a></li>
+       <li><a href="<?php echo base_url("admin/faculty") ?>"> Faculty Data</a></li>
+       <li><a href="<?php echo base_url("admin/major") ?>"> Major Data</a></li>
+       
      </ul>
    </li>
    <li class="ia-tree">

@@ -5,7 +5,8 @@ class Mstartup_founder extends CI_Model {
 	function tampil_startup_founder()
 	{
 		$this->db->join('startup', 'startup_founder.startup_id = startup.startup_id', 'left');
-		
+		$this->db->join('faculty', 'startup_founder.faculty_id = faculty.faculty_id', 'left');
+		$this->db->join('major', 'startup_founder.major_id = major.major_id', 'left');
 		$ambil=$this->db->get('startup_founder');
 		$pecah = $ambil->result_array();
 		return $pecah;
@@ -61,6 +62,22 @@ class Mstartup_founder extends CI_Model {
 		}
 		$this->db->where('sf_id', $id);
 		$this->db->update('startup_founder', $input);
+	}
+	function ubah_status_sf($id)
+	{
+		$status="";
+		$data['sf_status']="Pending";
+		$this->db->query("UPDATE startup_founder SET sf_status='$status' WHERE sf_id !='$id'");
+		$this->db->where('sf_id', $id);
+		$this->db->update('sf', $data);
+	}
+	function select_sf($id)
+	{
+		$status="";
+		$data['sf_status']="Accepted";
+		$this->db->query("UPDATE startup_founder SET sf_status='$status' WHERE sf_id !='$id'");
+		$this->db->where('sf_id', $id);
+		$this->db->update('sf', $data);
 	}
 	
 
