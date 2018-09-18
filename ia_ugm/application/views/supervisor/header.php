@@ -33,7 +33,7 @@
 </nav>
 <nav class="navbar-default navbar-side">
  <div class="sidebar-collapse">
- <div class="user">
+   <div class="user">
     <img class="img-circle" src="<?php echo base_url("assets/img/$login[user_image]"); ?>">
     <h3><?php echo $_SESSION['supervisor']['user_name']; ?></h3>
   </div>
@@ -52,34 +52,28 @@
     </li>
     <li class="ia-tree"><a href=""> 
       <i class="fa fa-rocket"></i>  Startup Data <i class="pull-right fa fa-angle-right"></i></a>
-       <ul class="ia-tree-menu">
+      <ul class="ia-tree-menu">
        <li><a href="<?php echo base_url("supervisor/startup") ?>"> Startup</a></li>
        <li><a href="<?php echo base_url("supervisor/startup_founder") ?>"> Startup Founder</a></li>
        <li><a href="<?php echo base_url("supervisor/faculty") ?>"> Faculty Data</a></li>
        <li><a href="<?php echo base_url("supervisor/major") ?>"> Major Data</a></li>
      </ul>
-    </li>
-    <li class="ia-tree">
-      <a href="<?php echo base_url("supervisor/user"); ?>"> 
-        <i class="fa fa-user"></i>  User <i class="pull-right fa fa-angle-right"></i></a>
-        <ul class="ia-tree-menu">
-         <li><a href="<?php echo base_url("supervisor/user") ?>"> User List</a></li>
-         <li><a href="<?php echo base_url("supervisor/user/add") ?>"> Add User</a></li>
-
-       </ul>
-     </li>
-     <li class="ia-tree">
-      <a href=""> <i class="fa fa-newspaper-o"></i>   News Data <i class="pull-right fa fa-angle-right"></i></a>
-      <ul class="ia-tree-menu">
-       <li><a href="<?php echo base_url("supervisor/news") ?>"> News</a></li>
-       <li><a href="<?php echo base_url("supervisor/category") ?>"> News Category</a></li>
-     </ul>
    </li>
-   <li><a href="<?php echo base_url("supervisor/mentor") ?>"> <i class="fa fa-user"></i> Mentor</a></li>
-   <li><a href="<?php echo base_url("supervisor/staff") ?>"> <i class="fa fa-users"></i> Staff</a></li>
-   <li><a href="<?php echo base_url("supervisor/partner") ?>"> <i class="fa fa-handshake-o"></i> Partner</a></li>
-   <li><a href="<?php echo base_url("supervisor/logout") ?>"><i class="fa fa-sign-out"></i> Logout</a></li>
- </ul>
+   <li><a href="<?php echo base_url("supervisor/user"); ?>"> 
+    <i class="fa fa-tasks"></i>   User</a>
+  </li>
+  <li class="ia-tree">
+    <a href=""> <i class="fa fa-newspaper-o"></i>   News Data <i class="pull-right fa fa-angle-right"></i></a>
+    <ul class="ia-tree-menu">
+     <li><a href="<?php echo base_url("supervisor/news") ?>"> News</a></li>
+     <li><a href="<?php echo base_url("supervisor/category") ?>"> News Category</a></li>
+   </ul>
+ </li>
+ <li><a href="<?php echo base_url("supervisor/mentor") ?>"> <i class="fa fa-user"></i> Mentor</a></li>
+ <li><a href="<?php echo base_url("supervisor/staff") ?>"> <i class="fa fa-users"></i> Staff</a></li>
+ <li><a href="<?php echo base_url("supervisor/partner") ?>"> <i class="fa fa-handshake-o"></i> Partner</a></li>
+ <li><a href="<?php echo base_url("supervisor/logout") ?>"><i class="fa fa-sign-out"></i> Logout</a></li>
+</ul>
 </div>
 </nav>
 <div class="page-wrapper">

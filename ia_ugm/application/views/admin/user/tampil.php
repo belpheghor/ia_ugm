@@ -31,17 +31,16 @@
  						<?php endif ?>
  					</td> 
  					<td>
+ 						<?php if ($value['user_status']!="Pending"): ?>
+ 							<a href="<?php echo base_url("admin/user/status/$value[user_id]") ?>" class="btn btn-success btn-xs hidden">Accept</a>
+ 						<?php else: ?>
+ 							<a href="<?php echo base_url("admin/user/status/$value[user_id]") ?>" class="btn btn-success btn-xs">Accept</a>
+ 							<?php endif ?>
+ 						<!-- <a href="<?php echo base_url("#user"); ?>" class="btn btn-warning btn-xs">Detail</a> -->
  						<a href="<?php echo base_url("admin/user/edit/$value[user_id]") ?>"
  							class="btn btn-info btn-xs">Edit</a>
- 							<a href="<?php echo base_url("admin/user/delete/$value[user_id]") ?>" class="btn btn-danger btn-xs">Delete</a>
- 							<?php if ($value['user_status']!="Pending"): ?>
- 								<a href="<?php echo base_url("admin/user/status/$value[user_id]") ?>" class="btn btn-success btn-xs disabled">Accept</a>
- 							<?php else: ?>
- 								<a href="<?php echo base_url("admin/user/status/$value[user_id]") ?>" class="btn btn-success btn-xs">Accept</a>
- 								
- 							<?php endif ?>
-
- 						</td>
+ 						<a href="<?php echo base_url("admin/user/delete/$value[user_id]") ?>" class="btn btn-danger btn-xs">Delete</a>
+ 					</td>
  					</tr>
 
  				<?php endforeach ?>

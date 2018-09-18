@@ -29,7 +29,8 @@ class User extends CI_Controller {
 
 		}
 
-		$this->load->view('supervisor/header');
+		$data['login'] = $this->session->userdata("supervisor");
+		$this->load->view('supervisor/header', $data);
 		$this->load->view('supervisor/user/tambah');
 		$this->load->view('supervisor/footer');
 	}
@@ -48,7 +49,8 @@ class User extends CI_Controller {
 		}
 		//bagian pengambilan data dari function ambil_data()
 		$data['user'] = $this->Muser->ambil_data($id);
-		$this->load->view('supervisor/header');
+		$data['login'] = $this->session->userdata("supervisor");
+		$this->load->view('supervisor/header', $data);
 		$this->load->view('supervisor/user/ubah', $data);
 		$this->load->view('supervisor/footer');
 	}

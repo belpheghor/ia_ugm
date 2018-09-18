@@ -61,22 +61,16 @@
        
      </ul>
    </li>
-   <li class="ia-tree">
-    <a href="<?php echo base_url("admin/user"); ?>"> 
-      <i class="fa fa-user"></i>  User <i class="pull-right fa fa-angle-right"></i></a>
-      <ul class="ia-tree-menu">
-       <li><a href="<?php echo base_url("admin/user") ?>"> User List</a></li>
-       <li><a href="<?php echo base_url("admin/user/add") ?>"> Add User</a></li>
-
-     </ul>
-   </li>
+   <li><a href="<?php echo base_url("admin/user"); ?>"> 
+      <i class="fa fa-tasks"></i>   User</a>
+    </li>
    <li class="ia-tree">
     <a href=""> <i class="fa fa-newspaper-o"></i>   News Data <i class="pull-right fa fa-angle-right"></i></a>
     <ul class="ia-tree-menu">
      <li><a href="<?php echo base_url("admin/news") ?>"> News</a></li>
      <li><a href="<?php echo base_url("admin/category") ?>"> News Category</a></li>
-     <li><a href="<?php echo base_url("admin/tag") ?>"> Tag</a></li>
-     <li><a href="<?php echo base_url("admin/news_tag") ?>"> News Tag</a></li>
+    <!--  <li><a href="<?php echo base_url("admin/tag") ?>"> Tag</a></li> -->
+     
    </ul>
  </li>
  <li><a href="<?php echo base_url("admin/mentor") ?>"> <i class="fa fa-user"></i> Mentor</a></li>
