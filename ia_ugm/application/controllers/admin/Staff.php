@@ -51,6 +51,11 @@ class Staff extends CI_Controller {
 		$this->load->view('admin/staff/ubah', $data);
 		$this->load->view('admin/footer');
 	}
+	function status($id)
+	{
+		$this->Mstaff->select_staff($id);
+		redirect('admin/staff','refresh');
+	}
 
 }
 

@@ -7,7 +7,7 @@
 	</div>
 	<div class="form-group">
 		<label>Last Name</label>
-		<input type="text" name="last_name" class="form-control" required="">
+		<input type="text" name="last_name" class="form-control">
 	</div>
 	
 	<div class="form-group">
@@ -21,19 +21,20 @@
 	<div class="form-group">
 	 	<label>Staff Image</label>
 	 	<input type="file" name="person_image" class="form-control" required="">
+	 	<p><small style="color: red">*use 1:1 scale image for better resolution</small></p>
 	 </div>
 	<div class="form-group">
 		<label>Staff Position</label>
-		<input type="text" name="person_position" class="form-control">
+		<input type="text" name="person_position" class="form-control" required="">
 	</div>
 	<div class="form-group">
 		<label>Staff Email</label>
-		<input type="text" name="person_email" class="form-control" required="">
+		<input type="text" name="person_email" class="form-control" >
 	</div>
 	 
 	 <div class="form-group">
 	 	<label>Staff Description</label>
-	 	<textarea class="form-control" required="" name="person_description"></textarea>
+	 	<textarea class="form-control" name="person_description"></textarea>
 	 </div>
 	 <div class="form-group">
 	 	<label>Staff Linkedin</label>

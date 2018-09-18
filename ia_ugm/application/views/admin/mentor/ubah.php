@@ -50,7 +50,8 @@
 	<div class="form-group">
 		<label>New Image</label>
 		
-		<input type="file" name="person_image" class="form-control" required="">		
+		<input type="file" name="person_image" class="form-control" required="">	
+		<p><small style="color: red">*use 1:1 scale image for better resolution</small></p>	
 		
 	</div>
 	 <div class="form-group">

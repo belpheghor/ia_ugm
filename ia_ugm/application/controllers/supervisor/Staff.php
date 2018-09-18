@@ -51,6 +51,11 @@ class Staff extends CI_Controller {
 		$this->load->view('supervisor/staff/ubah', $data);
 		$this->load->view('supervisor/footer');
 	}
+	function status($id)
+	{
+		$this->Mstaff->ubah_status_staff($id);
+		redirect('supervisor/staff','refresh');
+	}
 
 }
 
