@@ -7,13 +7,20 @@ class Startup_founder extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Mstartup_founder');
-	}
+		$this->load->model('Mstartup');
+		$this->load->model('Mmajor');
+		$this->load->model('Mfaculty');
+	} 
 	public function index()
 	{
+		$data['login'] = $this->session->userdata("operator");
 		$data['startup_founder'] = $this->Mstartup_founder->tampil_startup_founder();
-		$this->load->view('admin/header');
-		$this->load->view('admin/startup_founder/tampil', $data);
-		$this->load->view('admin/footer');
+		$data['startup'] = $this->Mstartup->tampil_startup();
+		$data['major']=$this->Mmajor->tampil_jurusan();
+		$data['faculty']=$this->Mfaculty->tampil_fakultas();
+		$this->load->view('operator/header', $data);
+		$this->load->view('operator/startup_founder/tampil', $data);
+		$this->load->view('operator/footer');
 
 
 	}
@@ -22,35 +29,48 @@ class Startup_founder extends CI_Controller {
 		$input = $this->input->post();
 		if ($input) {
 			$this->Mstartup_founder->simpan_startup_founder($input);
-			redirect('admin/startup_founder','refresh');
+			redirect('operator/startup_founder','refresh');
 
 		}
-
-		$this->load->view('admin/header');
-		$this->load->view('admin/startup_founder/tambah');
-		$this->load->view('admin/footer');
+		$data['login'] = $this->session->userdata("operator");
+		$data['startup'] = $this->Mstartup->tampil_startup();
+		$data['major']=$this->Mmajor->tampil_jurusan();
+		$data['faculty']=$this->Mfaculty->tampil_fakultas();
+		$this->load->view('operator/header', $data);
+		$this->load->view('operator/startup_founder/tambah');
+		$this->load->view('operator/footer');
 	}
 	function delete($id){
 
 		$this->Mstartup_founder->hapus_startup_founder($id);
 
-		redirect('admin/startup_founder','refresh');
+		redirect('operator/startup_founder','refresh');
 	}
 	function edit($id){
 
 		$input=$this->input->post();
 		if ($input) {
 			$this->Mstartup_founder->ubah_startup_founder($input,$id);
-			redirect('admin/startup_founder','refresh');
+			redirect('operator/startup_founder','refresh');
 		}
 		//bagian pengambilan data dari function ambil_data()
+		$data['login'] = $this->session->userdata("operator");
 		$data['startup_founder'] = $this->Mstartup_founder->ambil_data($id);
-		$this->load->view('admin/header');
-		$this->load->view('admin/startup_founder/ubah', $data);
-		$this->load->view('admin/footer');
+		$data['startup'] = $this->Mstartup->tampil_startup();
+		$data['major']=$this->Mmajor->tampil_jurusan();
+		$data['faculty']=$this->Mfaculty->tampil_fakultas();
+		$this->load->view('operator/header', $data);
+		$this->load->view('operator/startup_founder/ubah', $data);
+		$this->load->view('operator/footer');
 	}
+	function status($id)
+	{
+		$this->Mstartup_founder->ubah_status_sf($id);
+		redirect('operator/startup_founder','refresh');
+	}
+
 
 }
 
 /* End of file Startup_founder.php */
-/* Location: ./application/controllers/admin/Startup_founder.php */
+/* Location: ./application/controllers/operator/Startup_founder.php */

@@ -31,7 +31,8 @@
 	<div class="form-group">
 		<label>New Image</label>
 		
-		<input type="file" name="person_image" class="form-control">		
+		<input type="file" name="person_image" class="form-control">
+		<p><small style="color: red">*use 1:1 scale image for better resolution</small></p>		
 		
 	</div>
 	<div class="form-group">
@@ -77,5 +78,5 @@
 	 	<input type="text" name="person_level" value="staff" readonly="" class="form-control">
 	 </div>
 	 <button class="btn btn-info ">Submit</button>
-	 <a href="<?php echo base_url("admin/staff") ?>" class="btn btn-danger ">Cancel</a>
+	 <a href="<?php echo base_url("supervisor/staff") ?>" class="btn btn-danger ">Cancel</a>
 </form>

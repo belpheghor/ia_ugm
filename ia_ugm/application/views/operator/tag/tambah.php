@@ -6,6 +6,6 @@
 		<input type="text" name="tag_name" class="form-control">
 	</div>
 	<button class="btn btn-primary">Submit</button>
-	<a href="<?php echo base_url("admin/tag") ?>" class="btn btn-danger">Cancel</a>
+	<a href="<?php echo base_url("supervisor/tag") ?>" class="btn btn-danger">Cancel</a>
 	
 </form>

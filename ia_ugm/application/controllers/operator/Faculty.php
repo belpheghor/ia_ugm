@@ -1,24 +1,24 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Category extends CI_Controller {
+class Faculty extends CI_Controller {
 	function __construct() 
 	{
 		parent::__construct();
-		$this->load->model('Mcategory');
+		$this->load->model('Mfaculty');
 	}
 	
 
 	public function index()
 	{
 		$data['login'] = $this->session->userdata("operator");
-		// model Mcategory menjalankan fungsi tampil_kategori()
-		$data['category']=$this->Mcategory->tampil_kategori();
+		// model Mfaculty menjalankan fungsi tampil_fakultas()
+		$data['faculty']=$this->Mfaculty->tampil_fakultas();
 
 		// load view
 
 		$this->load->view('operator/header', $data); 
-		$this->load->view('operator/news_category/tampil', $data);
+		$this->load->view('operator/faculty/tampil', $data);
 		$this->load->view('operator/footer'); 
 		
 	}
@@ -31,52 +31,53 @@ class Category extends CI_Controller {
 		if($inputan)
 		{
 
-			// mcategory jalankan fungsi simpan_kategori
-			$this->Mcategory->simpan_kategori($inputan);
+			// mfaculty jalankan fungsi simpan_fakultas
+			$this->Mfaculty->simpan_fakultas($inputan);
 
-			// redirect tampilan operator/category/index
-			redirect('operator/category','refresh');
+			// redirect tampilan operator/faculty/index
+			redirect('operator/faculty','refresh');
 
 		}
 		$data['login'] = $this->session->userdata("operator");
 		$this->load->view('operator/header', $data); 
-		$this->load->view('operator/news_category/tambah');
+		$this->load->view('operator/faculty/tambah');
 		$this->load->view('operator/footer'); 
 		
 	}
 
 	function delete($id){
 		
-		$this->Mcategory->hapus_kategori($id);
+		$this->Mfaculty->hapus_fakultas($id);
 
 		// kembali ke controller pegawai function tampil
 
-		redirect('operator/category','refresh');
+		redirect('operator/faculty','refresh');
 	}
 	function edit($id){
 		
 		// mendapatkan isi dari inputan
 		$inputan=$this->input->post();
 		if ($inputan) {
-			$this->Mcategory->ubah_kategori($inputan,$id);
-			redirect('operator/category','refresh');
+			$this->Mfaculty->ubah_fakultas($inputan,$id);
+			redirect('operator/faculty','refresh');
 		}
 		$data['login'] = $this->session->userdata("operator");
 		//bagian pengambilan data dari function ambil_data()
-		$data['category'] = $this->Mcategory->ambil_data($id);
+		$data['faculty'] = $this->Mfaculty->ambil_data($id);
 		$this->load->view('operator/header', $data);
-		$this->load->view('operator/news_category/ubah', $data);
+		$this->load->view('operator/faculty/ubah', $data);
 		$this->load->view('operator/footer');
 	}
 	function status($id)
 	{
-		$this->Mcategory->ubah_status_category($id);
-		redirect('operator/category','refresh');
+		$this->Mfaculty->ubah_status_faculty($id);
+		redirect('operator/faculty','refresh');
 	}
+
 
 	
 
 }
 
-/* End of file Category.php */
-/* Location: ./application/controllers/operator/Category.php */
+/* End of file faculty.php */
+/* Location: ./application/controllers/operator/faculty.php */

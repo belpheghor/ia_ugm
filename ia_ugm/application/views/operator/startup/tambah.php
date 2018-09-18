@@ -4,17 +4,18 @@
 	<div class="form-group">
 		<label>Startup Name</label>
 		<div>
-			<input type="text" name="startup_name" class="form-control">
+			<input type="text" name="startup_name" class="form-control" required="" >
 		</div>
 	</div>
 	<div class="form-group">
 		<label>Startup Image</label>
-		<input type="file" name="startup_image" class="form-control">		
+		<input type="file" name="startup_image" class="form-control" required="" >	
+		<p><small style="color: red">*use 3:4 ratio image for better resolution</small></p>		
 	</div>
 	<div class="form-group">
 		<label>Startup Description</label> 
 		<div>
-			<input type="text" name="startup_description" class="form-control">
+			<input type="text" name="startup_description" class="form-control" required="" >
 		</div>
 	</div>
 	<div class="form-group"> 
@@ -42,7 +43,7 @@
 	</div>
 	
 	<button class="btn btn-primary">Submit</button>
-	<a href="<?php echo base_url("admin/startup/"); ?>" class="btn btn-danger">Cancel</a>
+	<a href="<?php echo base_url("supervisor/startup/"); ?>" class="btn btn-danger">Cancel</a>
 
 	
 </form>

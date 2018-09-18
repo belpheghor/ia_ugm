@@ -1,9 +1,6 @@
-<h3>Mentor Data</h3>
+<h3> <b>Mentor Data</b></h3>
 <hr>
-<pre>
-	<?php print_r($mentor) ?>
-</pre>
-<a href="<?php echo base_url("admin/mentor/add") ?>" class="btn btn-success btn-sm">Create New</a>
+<a href="<?php echo base_url("supervisor/mentor/add") ?>" class="btn btn-success btn-sm">Create New</a>
 <br>
 <br>
 
@@ -16,6 +13,7 @@
 			<th>Company</th>
 			<th>Linkedin</th>
 			<th>Website</th>
+			<th>Requested Permsission</th>
 			<th>Option</th>
 		</tr>
 	</thead>
@@ -29,10 +27,25 @@
 				<td><?php echo $value['person_linkedin'] ?></td>
 				<td><?php echo $value['person_website'] ?></td>
 				<td>
-					<a href="" class="btn btn-warning btn-xs">Detail</a>
-					<a href="<?php echo base_url("admin/mentor/edit/$value[person_id]") ?>" class="btn btn-info btn-xs">Edit</a>
-					<a href="<?php echo base_url("admin/mentor/delete/$value[person_id]") ?>" class="btn btn-danger btn-xs">Delete</a>
-				</td>
+ 						 <?php if ($value['person_status']=="Pending"): ?>
+ 						 	<span style="color: red">Pending</span>
+ 						 <?php endif ?>
+ 						 <?php if ($value['person_status']=='Accepted'): ?>
+ 						 	<span style="color: green">Accepted</span>
+ 						 <?php endif ?>
+ 					</td>
+ 					<td>
+ 							<a href="<?php echo base_url("#mentor"); ?>" class="btn btn-warning btn-xs">Detail</a>
+ 							<a href="<?php echo base_url("supervisor/mentor/edit/$value[person_id]") ?>" class="btn btn-info btn-xs"> Edit</a>
+ 							<?php if ($value['person_status']=="Accepted"): ?>
+ 							<a href="<?php echo base_url("supervisor/mentor/delete/$value[person_id]") ?>" class="btn btn-danger btn-xs">Delete</a>
+ 							
+ 						<?php endif ?>
+ 						<?php if ($value['person_status']==""): ?>
+
+ 							<a href="<?php echo base_url("supervisor/mentor/status/$value[person_id]") ?>" class="btn btn-success btn-xs">Ask Permission</a>
+ 						<?php endif ?>
+ 					</td>
 			</tr>
 		<?php endforeach ?>
 	</tbody>

@@ -10,10 +10,11 @@ class Background extends CI_Controller {
 	}
 	public function index()
 	{
+		$data['login'] = $this->session->userdata("operator");
 		$data['background'] = $this->Mbackground->tampil_background();
-		$this->load->view('admin/header');
-		$this->load->view('admin/background/tampil', $data);
-		$this->load->view('admin/footer');
+		$this->load->view('operator/header', $data);
+		$this->load->view('operator/background/tampil', $data);
+		$this->load->view('operator/footer');
 		
 	}
 	function add()
@@ -24,34 +25,44 @@ class Background extends CI_Controller {
 
 			$this->Mbackground->simpan_background();
 
-			redirect('admin/background','refresh');
+			redirect('operator/background','refresh');
 
 		}
-
-		$this->load->view('admin/header');
-		$this->load->view('admin/background/tambah');
-		$this->load->view('admin/footer');
+		$data['login'] = $this->session->userdata("operator");
+		$this->load->view('operator/header', $data);
+		$this->load->view('operator/background/tambah');
+		$this->load->view('operator/footer');
 	}
 	function delete($id){
 		
 		$this->Mbackground->hapus_background($id);
 
-		redirect('admin/background','refresh');
+		redirect('operator/background','refresh');
 	}
 	function edit($id){
 		
 		$input=$this->input->post();
 		if ($input) {
 			$this->Mbackground->ubah_background($input,$id);
-			redirect('admin/background','refresh');
+			redirect('operator/background','refresh');
 		}
+		$data['login'] = $this->session->userdata("operator");
 		//bagian pengambilan data dari function ambil_data()
 		$data['background'] = $this->Mbackground->ambil_data($id);
-		$this->load->view('admin/header');
-		$this->load->view('admin/background/ubah', $data);
-		$this->load->view('admin/footer');
+		$this->load->view('operator/header', $data);
+		$this->load->view('operator/background/ubah', $data);
+		$this->load->view('operator/footer');
+	}
+	function select($id){
+		$this->Mbackground->select_background($id);
+		redirect('operator/background','refresh');
+	}
+	function status($id)
+	{
+		$this->Mbackground->ubah_status_background($id);
+		redirect('operator/background','refresh');
 	}
 }
 
 /* End of file Background.php */
-/* Location: ./application/controllers/admin/Background.php */
+/* Location: ./application/controllers/operator/Background.php */

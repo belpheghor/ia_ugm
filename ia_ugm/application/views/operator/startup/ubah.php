@@ -4,19 +4,25 @@
 	<div class="form-group">
 		<label>Startup Name</label>
 		<div>
-			<input type="text" name="startup_name" class="form-control"
+			<input type="text" name="startup_name" class="form-control" required=""
 			value="<?php echo $startup['startup_name'] ?>">
 		</div>
 	</div>
+	 <div class="form-group">
+		<label>Existing Image</label>
+		<img width="100" src="<?php echo base_url("assets/startup/$startup[startup_image]") ?>">
+		
+	</div>
 	<div class="form-group">
-		<label>Startup Image</label>
-		<input type="file" name="startup_image" class="form-control"
-		value="<?php echo $startup['startup_image'] ?>">		
+		<label>New Image</label>
+		<input type="file" name="startup_image" class="form-control" required=""
+		value="<?php echo $startup['startup_image'] ?>">	
+		<p><small style="color: red">*use 3:4 ratio image for better resolution</small></p>		
 	</div>
 	<div class="form-group">
 		<label>Startup Description</label> 
 		<div>
-			<input type="text" name="startup_description" class="form-control"
+			<input type="text" name="startup_description" class="form-control" required=""
 			value="<?php echo $startup['startup_description'] ?>">
 		</div>
 	</div>
@@ -49,7 +55,7 @@
 	</div>
 	
 	<button class="btn btn-primary">Submit</button>
-	<a href="<?php echo base_url("admin/startup/"); ?>" class="btn btn-danger">Cancel</a>
+	<a href="<?php echo base_url("supervisor/startup/"); ?>" class="btn btn-danger">Cancel</a>
 
 	
 </form>

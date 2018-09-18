@@ -5,7 +5,8 @@ class Dashboard extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('operator/header');
+		$data['login'] = $this->session->userdata("operator");
+		$this->load->view('operator/header', $data);
 		$this->load->view('operator/dashboard');
 		$this->load->view('operator/footer');
 	}
@@ -13,4 +14,4 @@ class Dashboard extends CI_Controller {
 }
 
 /* End of file Dashboard.php */
-/* Location: ./application/controllers/admin/Dashboard.php */
+/* Location: ./application/controllers/operator/Dashboard.php */

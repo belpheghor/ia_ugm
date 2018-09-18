@@ -1,6 +1,6 @@
 <h3><b>News Data</b></h3>
 <hr>
-<a href="<?php echo base_url("admin/news/add") ?>" class="btn btn-success btn-sm">Create New</a>
+<a href="<?php echo base_url("supervisor/news/add") ?>" class="btn btn-success btn-sm">Create New</a>
 <br>
 <br>
 <table class="table table-bordered table-striped table-responsive" id="thetable">
@@ -38,25 +38,25 @@
 			<td><?php echo $value['user_name'] ?></td>
 			<td>
 				<?php if ($value['permission_status']=="Pending"): ?>
-					<span style="color: red"><?php echo $value['permission_status'] ?></span>
+					<span style="color: red">Pending</span>
 				<?php endif ?>
-				<?php if ($value['permission_status']=="Accepted"): ?>
+				<?php if ($value['permission_status']=='Accepted'): ?>
 					<span style="color: green">Accepted</span>
-					
 				<?php endif ?>
-			</td> 
+			</td>
 			<td>
-				<?php if ($value['permission_status']!="Pending"): ?>
-					<a href="<?php echo base_url("admin/news/status/$value[news_id]") ?>" class="btn btn-success btn-xs hidden">Accept</a>
-				<?php else: ?>
-					<a href="<?php echo base_url("admin/news/status/$value[news_id]") ?>" class="btn btn-success btn-xs">Accept</a>
-				<?php endif ?>
 				<a href="<?php echo base_url("#news"); ?>" class="btn btn-warning btn-xs">Detail</a>
-				<a href="<?php echo base_url("admin/news/edit/$value[news_id]") ?>"
-					class="btn btn-info btn-xs">Edit</a>
-					<a href="<?php echo base_url("admin/news/delete/$value[news_id]") ?>" class="btn btn-danger btn-xs">Delete</a>
-				</td>
-			</tr>
+				<a href="<?php echo base_url("supervisor/news/edit/$value[news_id]") ?>" class="btn btn-info btn-xs"> Edit</a>
+				<?php if ($value['permission_status']=="Accepted"): ?>
+					<a href="<?php echo base_url("supervisor/news/delete/$value[news_id]") ?>" class="btn btn-danger btn-xs">Delete</a>
 
-		<?php endforeach ?>
-	</table>
+				<?php endif ?>
+				<?php if ($value['permission_status']==""): ?>
+
+					<a href="<?php echo base_url("supervisor/news/status/$value[news_id]") ?>" class="btn btn-success btn-xs">Ask Permission</a>
+				<?php endif ?>
+			</td>
+		</tr>
+
+	<?php endforeach ?>
+</table>

@@ -34,7 +34,7 @@ class Mlogin extends CI_Model {
 				$ambil = $this->db->get('user');
 				$hasil = $ambil->num_rows();
 				if ($hasil==1) {
-					$this->session->userdata('operator',$ambil->row_array());
+					$this->session->set_userdata('operator',$ambil->row_array());
 					return "success-operator";
 				}
 				else

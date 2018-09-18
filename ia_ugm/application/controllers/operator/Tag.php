@@ -1,24 +1,25 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Category extends CI_Controller {
+class Tag extends CI_Controller {
+
 	function __construct() 
 	{
 		parent::__construct();
-		$this->load->model('Mcategory');
+		$this->load->model('Mtag');
 	}
 	
 
 	public function index()
 	{
 		$data['login'] = $this->session->userdata("operator");
-		// model Mcategory menjalankan fungsi tampil_kategori()
-		$data['category']=$this->Mcategory->tampil_kategori();
+		// model Mtag menjalankan fungsi tampil_tag()
+		$data['tag']=$this->Mtag->tampil_tag();
 
 		// load view
 
 		$this->load->view('operator/header', $data); 
-		$this->load->view('operator/news_category/tampil', $data);
+		$this->load->view('operator/tag/tampil', $data);
 		$this->load->view('operator/footer'); 
 		
 	}
@@ -31,52 +32,50 @@ class Category extends CI_Controller {
 		if($inputan)
 		{
 
-			// mcategory jalankan fungsi simpan_kategori
-			$this->Mcategory->simpan_kategori($inputan);
+			// mtag jalankan fungsi simpan_tag
+			$this->Mtag->simpan_tag($inputan);
 
-			// redirect tampilan operator/category/index
-			redirect('operator/category','refresh');
+			// redirect tampilan operator/tag/index
+			redirect('operator/tag','refresh');
 
 		}
 		$data['login'] = $this->session->userdata("operator");
 		$this->load->view('operator/header', $data); 
-		$this->load->view('operator/news_category/tambah');
+		$this->load->view('operator/tag/tambah');
 		$this->load->view('operator/footer'); 
 		
 	}
 
 	function delete($id){
 		
-		$this->Mcategory->hapus_kategori($id);
+		$this->Mtag->hapus_tag($id);
 
 		// kembali ke controller pegawai function tampil
 
-		redirect('operator/category','refresh');
+		redirect('operator/tag','refresh');
 	}
 	function edit($id){
 		
 		// mendapatkan isi dari inputan
 		$inputan=$this->input->post();
 		if ($inputan) {
-			$this->Mcategory->ubah_kategori($inputan,$id);
-			redirect('operator/category','refresh');
+			$this->Mtag->ubah_tag($inputan,$id);
+			redirect('operator/tag','refresh');
 		}
 		$data['login'] = $this->session->userdata("operator");
 		//bagian pengambilan data dari function ambil_data()
-		$data['category'] = $this->Mcategory->ambil_data($id);
+		$data['tag'] = $this->Mtag->ambil_data($id);
 		$this->load->view('operator/header', $data);
-		$this->load->view('operator/news_category/ubah', $data);
+		$this->load->view('operator/tag/ubah', $data);
 		$this->load->view('operator/footer');
 	}
+
 	function status($id)
 	{
-		$this->Mcategory->ubah_status_category($id);
-		redirect('operator/category','refresh');
+		$this->Mtag->ubah_status_tag($id);
+		redirect('operator/tag','refresh');
 	}
-
-	
-
 }
 
-/* End of file Category.php */
-/* Location: ./application/controllers/operator/Category.php */
+/* End of file Tag.php */
+/* Location: ./application/controllers/operator/Tag.php */

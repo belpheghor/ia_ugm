@@ -10,10 +10,11 @@ class Staff extends CI_Controller {
 	}
 	public function index()
 	{
+		$data['login'] = $this->session->userdata("operator");
 		$data['staff'] = $this->Mstaff->tampil_staff();
-		$this->load->view('admin/header');
-		$this->load->view('admin/staff/tampil', $data);
-		$this->load->view('admin/footer');
+		$this->load->view('operator/header', $data);
+		$this->load->view('operator/staff/tampil', $data);
+		$this->load->view('operator/footer');
 
 
 	}
@@ -22,35 +23,41 @@ class Staff extends CI_Controller {
 		$input = $this->input->post();
 		if ($input) {
 			$this->Mstaff->simpan_staff($input);
-			redirect('admin/staff','refresh');
+			redirect('operator/staff','refresh');
 
 		}
-
-		$this->load->view('admin/header');
-		$this->load->view('admin/staff/tambah');
-		$this->load->view('admin/footer');
+		$data['login'] = $this->session->userdata("operator");
+		$this->load->view('operator/header',$data);
+		$this->load->view('operator/staff/tambah');
+		$this->load->view('operator/footer');
 	}
 	function delete($id){
 
 		$this->Mstaff->hapus_staff($id);
 
-		redirect('admin/staff','refresh');
+		redirect('operator/staff','refresh');
 	}
 	function edit($id){
 
 		$input=$this->input->post();
 		if ($input) {
 			$this->Mstaff->ubah_staff($input,$id);
-			redirect('admin/staff','refresh');
+			redirect('operator/staff','refresh');
 		}
 		//bagian pengambilan data dari function ambil_data()
+		$data['login'] = $this->session->userdata("operator");
 		$data['staff'] = $this->Mstaff->ambil_data($id);
-		$this->load->view('admin/header');
-		$this->load->view('admin/staff/ubah', $data);
-		$this->load->view('admin/footer');
+		$this->load->view('operator/header',$data);
+		$this->load->view('operator/staff/ubah', $data);
+		$this->load->view('operator/footer');
+	}
+	function status($id)
+	{
+		$this->Mstaff->ubah_status_staff($id);
+		redirect('operator/staff','refresh');
 	}
 
 }
 
 /* End of file Staff.php */
-/* Location: ./application/controllers/admin/Staff.php */
+/* Location: ./application/controllers/operator/Staff.php */

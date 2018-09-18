@@ -11,10 +11,11 @@ class Timeline extends CI_Controller {
 
 	public function index()
 	{
-		$data['timeline']= $this->Mtimeline->tampil_timeline();
-		$this->load->view('admin/header');
-		$this->load->view('admin/timeline/tampil', $data);
-		$this->load->view('admin/footer');
+		$data['login'] = $this->session->userdata("operator");
+		$data['timeline']= $this->Mtimeline->tampil_timeline2();
+		$this->load->view('operator/header', $data);
+		$this->load->view('operator/timeline/tampil', $data);
+		$this->load->view('operator/footer');
 	}
 	function add()
 	{
@@ -26,39 +27,46 @@ class Timeline extends CI_Controller {
 			$this->Mtimeline->simpan_timeline($input);
 
 
-			redirect('admin/timeline','refresh');
+			redirect('operator/timeline','refresh');
 
 		}
+		$data['login'] = $this->session->userdata("operator");
 		// nambah timeline ngambil data program 
 		$data['program'] = $this->Mprogram->tampil_program();
-		$this->load->view('admin/header');
+		$this->load->view('operator/header', $data);
 		// kirim data program
-		$this->load->view('admin/timeline/tambah', $data);
-		$this->load->view('admin/footer');
+		$this->load->view('operator/timeline/tambah', $data);
+		$this->load->view('operator/footer');
 	}
 	function delete($id){
 		
 		$this->Mtimeline->hapus_timeline($id);
 
-		redirect('admin/timeline','refresh');
+		redirect('operator/timeline','refresh');
 	}
 	function edit($id){
 		
 		$input=$this->input->post();
 		if ($input) {
 			$this->Mtimeline->ubah_timeline($input,$id);
-			redirect('admin/timeline','refresh');
+			redirect('operator/timeline','refresh');
 		}
 		//bagian pengambilan data dari function ambil_data()
+		$data['login'] = $this->session->userdata("operator");
 		$data['program'] = $this->Mprogram->tampil_program();
 		$data['timeline'] = $this->Mtimeline->ambil_data($id);
-		$this->load->view('admin/header');
-		$this->load->view('admin/timeline/ubah', $data);
-		$this->load->view('admin/footer');
+		$this->load->view('operator/header', $data);
+		$this->load->view('operator/timeline/ubah', $data);
+		$this->load->view('operator/footer');
+	}
+	function status($id)
+	{
+		$this->Mtimeline->ubah_status_timeline($id);
+		redirect('operator/timeline','refresh');
 	}
 
  
 }
 
 /* End of file Timeline.php */
-/* Location: ./application/controllers/admin/Timeline.php */
+/* Location: ./application/controllers/operator/Timeline.php */

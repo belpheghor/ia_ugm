@@ -4,13 +4,14 @@
 	<div class="form-group">
 		<label>Partner Name</label>
 		<div>
-			<input type="text" name="partner_name" class="form-control">
+			<input type="text" name="partner_name" class="form-control" required="">
 		</div>
 	</div>
 		<div class="form-group">
 			<label>Partner Image</label>
 			<div>
-			<input type="file" name="partner_image" class="form-control">		
+			<input type="file" name="partner_image" class="form-control" required="">
+			<p><small style="color: red">*use 3:4 ratio image for better resolution</small></p>			
 		</div>
 		</div>
 	<div class="form-group">
@@ -21,7 +22,7 @@
 	</div>
 	
 	<button class="btn btn-primary">Submit</button>
-	<a href="<?php echo base_url("admin/user/"); ?>" class="btn btn-danger">Cancel</a>
+	<a href="<?php echo base_url("supervisor/user/"); ?>" class="btn btn-danger">Cancel</a>
 	 
 	
 </form>

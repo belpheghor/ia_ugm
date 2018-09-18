@@ -4,48 +4,49 @@
 	<div class="form-group">
 		<label>Program</label>
 		<select class="form-control" name="program_id">
-		<option>- Select Program -</option>
-		<?php foreach ($program as $key => $value): ?>
-			<option value="<?php echo $value['program_id'] ?>"><?php echo $value['program_name'] ?></option>
+			<option>- Select Program -</option>
+			<?php foreach ($program as $key => $value): ?>
+				<option value="<?php echo $value['program_id'] ?>"><?php echo $value['program_name'] ?></option>
 
-		<?php endforeach ?>
+			<?php endforeach ?>
 
-	</select>
+		</select>
 	</div>
 	<div class="form-group">
 		<label>Timeline Name</label>
 		
-			<input type="text" name="timeline_name" class="form-control">
+		<input type="text" name="timeline_name" class="form-control" required="">
 		
 	</div>
 	<div class="form-group">
 		<label>Timeline Description</label>
-		<textarea class="form-control" name="timeline_description"></textarea>
+		<textarea class="form-control" name="timeline_description" required=""></textarea>
 		
 	</div>
 	<div class="form-group">
 		<label>Timeline Start</label>
-		<input type="date" name="timeline_start" class="form-control">
+		<input type="date" name="timeline_start" class="form-control" required="">
 	</div>
 	<div class="form-group">
 		<label>Timeline End</label>
-		<input type="date" name="timeline_end" class="form-control">
+		<input type="date" name="timeline_end" class="form-control" required="">
 	</div>
 	<div class="form-group">
 		<label>Timeline Image</label>
 		
-			<input type="file" name="timeline_image" class="form-control">		
+		<input type="file" name="timeline_image" class="form-control" required="">		
+		<p><small style="color: red">*use 3:4 ratio image for better resolution</small></p>
 		
 	</div>
 	<div class="form-group">
 		<label>Registration Link</label> 
 		
-			<input type="text" name="registration_link" class="form-control">
+		<input type="text" name="registration_link" class="form-control">
 		
 	</div>
 	
 	<button class="btn btn-primary">Submit</button>
-	<a href="<?php echo base_url("admin/user/"); ?>" class="btn btn-danger">Cancel</a>
+	<a href="<?php echo base_url("supervisor/timeline/"); ?>" class="btn btn-danger">Cancel</a>
 
 	
 </form>

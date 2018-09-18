@@ -10,48 +10,55 @@ class User extends CI_Controller {
 	}
 	public function index()
 	{
+		$data['login'] = $this->session->userdata("operator");
+
 		$data['user'] = $this->Muser->tampil_user();
-		$this->load->view('admin/header');
-		$this->load->view('admin/user/tampil', $data);
-		$this->load->view('admin/footer');
+		$this->load->view('operator/header', $data);
+		$this->load->view('operator/user/tampil', $data);
+		$this->load->view('operator/footer');
 	}
-		function add()
+	function add()
 	{
 		$input = $this->input->post();
- 
+
 		if ($input) {
 
 			$this->Muser->simpan_user($input);
 
-			redirect('admin/user','refresh');
+			redirect('operator/user','refresh');
 
 		}
 
-		$this->load->view('admin/header');
-		$this->load->view('admin/user/tambah');
-		$this->load->view('admin/footer');
+		$data['login'] = $this->session->userdata("operator");
+		$this->load->view('operator/header', $data);
+		$this->load->view('operator/user/tambah');
+		$this->load->view('operator/footer');
 	}
 	function delete($id){
 		
 		$this->Muser->hapus_user($id);
 
-		redirect('admin/user','refresh');
+		redirect('operator/user','refresh');
 	}
 	function edit($id){
 		
 		$input=$this->input->post();
 		if ($input) {
 			$this->Muser->ubah_user($input,$id);
-			redirect('admin/user','refresh');
+			redirect('operator/user','refresh');
 		}
 		//bagian pengambilan data dari function ambil_data()
 		$data['user'] = $this->Muser->ambil_data($id);
-		$this->load->view('admin/header');
-		$this->load->view('admin/user/ubah', $data);
-		$this->load->view('admin/footer');
+		$data['login'] = $this->session->userdata("operator");
+		$this->load->view('operator/header', $data);
+		$this->load->view('operator/user/ubah', $data);
+		$this->load->view('operator/footer');
 	}
-
+	function status($id){
+		$this->Muser->ubah_status_user($id);
+		redirect('operator/user','refresh');
+	}
 }
 
 /* End of file User.php */
-/* Location: ./application/controllers/admin/User.php */
+/* Location: ./application/controllers/operator/User.php */

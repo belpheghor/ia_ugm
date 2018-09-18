@@ -81,5 +81,5 @@
 			<textarea class="form-control" name="news_content" id="theeditor" required=""></textarea>
 		</div>
 		<button class="btn btn-info btn-sm">Submit</button>
-		<a href="<?php echo base_url("admin/news") ?>" class="btn btn-danger btn-sm">Cancel</a>
+		<a href="<?php echo base_url("supervisor/news") ?>" class="btn btn-danger btn-sm">Cancel</a>
 </form>

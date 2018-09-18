@@ -7,11 +7,11 @@
 	</div>
 	<div class="form-group">
 		<label>Last Name</label>
-		<input type="text" name="last_name" class="form-control" required="">
+		<input type="text" name="last_name" class="form-control" >
 	</div>
 	<div class="form-group">
 		<label>Mentor Email</label>
-		<input type="email" name="person_email" class="form-control" required="">
+		<input type="email" name="person_email" class="form-control" >
 	</div>
 	<div class="form-group">
 		<label>Front Degree</label>
@@ -23,7 +23,7 @@
 	</div>
 	<div class="form-group">
 		<label>Last Education</label>
-		<input type="text" name="last_education" class="form-control" required="">
+		<input type="text" name="last_education" class="form-control" >
 	</div>
 	<div class="form-group">
 		<label>Mentor Company</label>
@@ -37,6 +37,7 @@
 	 <div class="form-group">
 	 	<label>Mentor Image</label>
 	 	<input type="file" name="person_image" class="form-control" required="">
+	 	<p><small style="color: red">*use 1:1 scale image for better resolution</small></p>
 	 </div>
 	 <div class="form-group">
 	 	<label>Mentor Description</label>
@@ -62,5 +63,5 @@
 	 	<input type="text" name="person_level" value="mentor" readonly="" class="form-control">
 	 </div>
 	 <button class="btn btn-info ">Submit</button>
-	 <a href="<?php echo base_url("admin/mentor") ?>" class="btn btn-danger ">Cancel</a>
+	 <a href="<?php echo base_url("supervisor/mentor") ?>" class="btn btn-danger ">Cancel</a>
 </form>

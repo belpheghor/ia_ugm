@@ -33,51 +33,48 @@
 </nav>
 <nav class="navbar-default navbar-side">
  <div class="sidebar-collapse">
-  <div class="user">
-    <img src="<?php echo base_url("assets/img/IMG_20180724_195828.jpg"); ?>">
-    <h3>Gaksa Gantara</h3>
+   <div class="user">
+    <img class="img-circle" src="<?php echo base_url("assets/img/$login[user_image]"); ?>">
+    <h3><?php echo $_SESSION['operator']['user_name']; ?></h3>
   </div>
   <ul class="nav" id="main-menu">
-    <li><a href="<?php echo base_url("admin/dashboard"); ?>"> 
+    <li><a href="<?php echo base_url("operator/dashboard"); ?>"> 
       <i class="fa fa-tachometer"></i>  Dashboard</a>
     </li>
-    <li><a href="<?php echo base_url("admin/background"); ?>"> 
+    <li><a href="<?php echo base_url("operator/background"); ?>"> 
       <i class="fa fa-picture-o"></i>   Background</a>
     </li>
-    <li><a href="<?php echo base_url("admin/timeline"); ?>"> 
+    <li><a href="<?php echo base_url("operator/timeline"); ?>"> 
       <i class="fa fa-calendar"></i>  Timeline</a>
     </li>
-    <li><a href="<?php echo base_url("admin/program"); ?>"> 
+    <li><a href="<?php echo base_url("operator/program"); ?>"> 
       <i class="fa fa-tasks"></i>   Program</a>
     </li>
     <li class="ia-tree"><a href=""> 
       <i class="fa fa-rocket"></i>  Startup Data <i class="pull-right fa fa-angle-right"></i></a>
-       <ul class="ia-tree-menu">
-       <li><a href="<?php echo base_url("admin/startup") ?>"> Startup</a></li>
-       <li><a href="<?php echo base_url("admin/startup_founder") ?>"> Startup Founder</a></li>
-     </ul>
-    </li>
-    <li class="ia-tree">
-      <a href="<?php echo base_url("admin/user"); ?>"> 
-        <i class="fa fa-user"></i>  User <i class="pull-right fa fa-angle-right"></i></a>
-        <ul class="ia-tree-menu">
-         <li><a href="<?php echo base_url("admin/user") ?>"> User List</a></li>
-         <li><a href="<?php echo base_url("admin/user/add") ?>"> Add User</a></li>
-
-       </ul>
-     </li>
-     <li class="ia-tree">
-      <a href=""> <i class="fa fa-newspaper-o"></i>   News Data <i class="pull-right fa fa-angle-right"></i></a>
       <ul class="ia-tree-menu">
-       <li><a href="<?php echo base_url("admin/news") ?>"> News</a></li>
-       <li><a href="<?php echo base_url("admin/category") ?>"> News Category</a></li>
+       <li><a href="<?php echo base_url("operator/startup") ?>"> Startup</a></li>
+       <li><a href="<?php echo base_url("operator/startup_founder") ?>"> Startup Founder</a></li>
+       <li><a href="<?php echo base_url("operator/faculty") ?>"> Faculty Data</a></li>
+       <li><a href="<?php echo base_url("operator/major") ?>"> Major Data</a></li>
      </ul>
    </li>
-   <li><a href="<?php echo base_url("admin/mentor") ?>"> <i class="fa fa-user"></i> Mentor</a></li>
-   <li><a href="<?php echo base_url("admin/staff") ?>"> <i class="fa fa-users"></i> Staff</a></li>
-   <li><a href="<?php echo base_url("admin/partner") ?>"> <i class="fa fa-handshake-o"></i> Partner</a></li>
-   <li><a href=""> <i class="fa fa-sign-out"></i> Logout</a></li>
- </ul>
+   <li><a href="<?php echo base_url("operator/user"); ?>"> 
+    <i class="fa fa-tasks"></i>   User</a>
+  </li>
+  <li class="ia-tree">
+    <a href=""> <i class="fa fa-newspaper-o"></i>   News Data <i class="pull-right fa fa-angle-right"></i></a>
+    <ul class="ia-tree-menu">
+     <li><a href="<?php echo base_url("operator/news") ?>"> News</a></li>
+     <li><a href="<?php echo base_url("operator/category") ?>"> News Category</a></li>
+     <li><a href="<?php echo base_url("operator/tag") ?>"> Tag</a></li> 
+   </ul>
+ </li>
+ <li><a href="<?php echo base_url("operator/mentor") ?>"> <i class="fa fa-user"></i> Mentor</a></li>
+ <li><a href="<?php echo base_url("operator/staff") ?>"> <i class="fa fa-users"></i> Staff</a></li>
+ <li><a href="<?php echo base_url("operator/partner") ?>"> <i class="fa fa-handshake-o"></i> Partner</a></li>
+ <li><a href="<?php echo base_url("operator/logout") ?>"><i class="fa fa-sign-out"></i> Logout</a></li>
+</ul>
 </div>
 </nav>
 <div class="page-wrapper">
