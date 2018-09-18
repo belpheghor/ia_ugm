@@ -74,6 +74,22 @@ class Mmentor extends CI_Model {
 		$this->db->where('person_id', $id);
 		$this->db->update('person', $input);
 	}	
+	function ubah_status_mentor($id)
+	{
+		$status="";
+		$data['person_status']="Pending";
+		$this->db->query("UPDATE person SET person_status='$status' WHERE person_id !='$id'");
+		$this->db->where('person_id', $id);
+		$this->db->update('person', $data);
+	}
+	function select_mentor($id)
+	{
+		$status="";
+		$data['person_status']="Accepted";
+		$this->db->query("UPDATE person SET person_status='$status' WHERE person_id !='$id'");
+		$this->db->where('person_id', $id);
+		$this->db->update('person', $data);
+	}
 
 }
 

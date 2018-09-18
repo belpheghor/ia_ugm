@@ -7,11 +7,11 @@
 	</div>
 	<div class="form-group">
 		<label>Last Name</label>
-		<input type="text" name="last_name" class="form-control" required="">
+		<input type="text" name="last_name" class="form-control" >
 	</div>
 	<div class="form-group">
 		<label>Mentor Email</label>
-		<input type="email" name="person_email" class="form-control" required="">
+		<input type="email" name="person_email" class="form-control" >
 	</div>
 	<div class="form-group">
 		<label>Front Degree</label>
@@ -23,7 +23,7 @@
 	</div>
 	<div class="form-group">
 		<label>Last Education</label>
-		<input type="text" name="last_education" class="form-control" required="">
+		<input type="text" name="last_education" class="form-control" >
 	</div>
 	<div class="form-group">
 		<label>Mentor Company</label>

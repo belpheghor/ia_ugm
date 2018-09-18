@@ -51,7 +51,11 @@ class Mentor extends CI_Controller {
 		$this->load->view('admin/mentor/ubah', $data);
 		$this->load->view('admin/footer');
 	}
-
+	function status($id)
+	{
+		$this->Mmentor->select_mentor($id);
+		redirect('admin/mentor','refresh');
+	}
 
 }
 

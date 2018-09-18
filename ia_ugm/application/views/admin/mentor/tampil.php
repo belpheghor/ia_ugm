@@ -14,6 +14,7 @@
 			<th>Company</th>
 			<th>Linkedin</th>
 			<th>Website</th>
+			<th>Requested Permission</th>
 			<th>Option</th>
 		</tr>
 	</thead>
@@ -27,10 +28,25 @@
 				<td><?php echo $value['person_linkedin'] ?></td>
 				<td><?php echo $value['person_website'] ?></td>
 				<td>
-					<a href="" class="btn btn-warning btn-xs">Detail</a>
-					<a href="<?php echo base_url("admin/mentor/edit/$value[person_id]") ?>" class="btn btn-info btn-xs">Edit</a>
-					<a href="<?php echo base_url("admin/mentor/delete/$value[person_id]") ?>" class="btn btn-danger btn-xs">Delete</a>
-				</td>
+ 						<?php if ($value['person_status']=="Pending"): ?>
+ 							<span style="color: red"><?php echo $value['person_status'] ?></span>
+ 						<?php endif ?>
+ 						<?php if ($value['person_status']=="Accepted"): ?>
+ 							<span style="color: green">Accepted</span>
+ 							
+ 						<?php endif ?>
+ 					</td> 
+ 					<td>
+ 						<?php if ($value['person_status']!="Pending"): ?>
+ 							<a href="<?php echo base_url("admin/mentor/status/$value[person_id]") ?>" class="btn btn-success btn-xs hidden">Accept</a>
+ 						<?php else: ?>
+ 							<a href="<?php echo base_url("admin/mentor/status/$value[person_id]") ?>" class="btn btn-success btn-xs">Accept</a>
+ 							<?php endif ?>
+ 						<a href="<?php echo base_url("#mentor"); ?>" class="btn btn-warning btn-xs">Detail</a>
+ 						<a href="<?php echo base_url("admin/mentor/edit/$value[person_id]") ?>"
+ 							class="btn btn-info btn-xs">Edit</a>
+ 						<a href="<?php echo base_url("admin/mentor/delete/$value[person_id]") ?>" class="btn btn-danger btn-xs">Delete</a>
+ 					</td>
 			</tr>
 		<?php endforeach ?>
 	</tbody>

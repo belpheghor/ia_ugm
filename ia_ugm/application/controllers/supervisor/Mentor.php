@@ -11,7 +11,7 @@ class Mentor extends CI_Controller {
 	public function index()
 	{
 		$data['login'] = $this->session->userdata("supervisor");
-		$data['mentor'] = $this->Mmentor->tampil_mentor();
+		$data['mentor'] = $this->Mmentor->tampil_mentor_all();
 		$this->load->view('supervisor/header', $data);
 		$this->load->view('supervisor/mentor/tampil', $data);
 		$this->load->view('supervisor/footer');
@@ -50,6 +50,11 @@ class Mentor extends CI_Controller {
 		$this->load->view('supervisor/header', $data);
 		$this->load->view('supervisor/mentor/ubah', $data);
 		$this->load->view('supervisor/footer');
+	}
+	function status($id)
+	{
+		$this->Mmentor->ubah_status_mentor($id);
+		redirect('supervisor/mentor','refresh');
 	}
 
 

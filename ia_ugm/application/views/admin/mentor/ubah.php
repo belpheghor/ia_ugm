@@ -8,12 +8,12 @@
 	</div>
 	<div class="form-group">
 		<label>Last Name</label>
-		<input type="text" name="last_name" class="form-control" required=""
+		<input type="text" name="last_name" class="form-control"
 		value="<?php echo $mentor['last_name'] ?>">
 	</div>
 	<div class="form-group">
 		<label>Mentor Email</label>
-		<input type="email" name="person_email" class="form-control" required=""
+		<input type="email" name="person_email" class="form-control"
 		value="<?php echo $mentor['person_email'] ?>">
 	</div>
 	<div class="form-group">
@@ -28,7 +28,7 @@
 	</div>
 	<div class="form-group">
 		<label>Last Education</label>
-		<input type="text" name="last_education" class="form-control" required=""
+		<input type="text" name="last_education" class="form-control"
 		value="<?php echo $mentor['last_education'] ?>">
 	</div>
 	<div class="form-group">
@@ -50,7 +50,7 @@
 	<div class="form-group">
 		<label>New Image</label>
 		
-		<input type="file" name="person_image" class="form-control">		
+		<input type="file" name="person_image" class="form-control" required="">		
 		
 	</div>
 	 <div class="form-group">
