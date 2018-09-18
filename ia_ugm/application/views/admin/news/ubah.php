@@ -1,15 +1,15 @@
 <h3><b>Form News</b></h3>
 <hr>
 
-<?php 
+<!-- <?php 
 foreach ($news as $key => $value) {
 	$tag_id[] = $value['tag_id'];
 }
 foreach ($tag as $key => $value) {
 	$semua_tag_id[] = $value['tag_id'];
 }
- ?>
- <?php $image = $news[0] ?>
+ ?> -->
+ <?php $image = $news ?>
 <form method="post" enctype="multipart/form-data"> 
 	<div class="form-group">
 		<label>User</label>
@@ -17,7 +17,7 @@ foreach ($tag as $key => $value) {
 			<select class="form-control" name="user_id">
 				<option>-Select User-</option>
 				<?php foreach ($user as $key => $value): ?>
-					<option value="<?php echo $value['user_id'] ?>" <?php if ($value['user_id']==$news[0]['user_id']) {
+					<option value="<?php echo $value['user_id'] ?>" <?php if ($value['user_id']==$news['user_id']) {
 						echo "selected";
 					} ?>><?php echo $value['user_name'] ?></option>
 				<?php endforeach ?>
@@ -29,7 +29,7 @@ foreach ($tag as $key => $value) {
 		<select class="form-control" name="category_id">
 			<option>-Select Category-</option>
 			<?php foreach ($category as $key => $value): ?>
-				<option value="<?php echo $value['category_id'] ?>" <?php if ($value['category_id']==$news[0]['category_id']) {
+				<option value="<?php echo $value['category_id'] ?>" <?php if ($value['category_id']==$news['category_id']) {
 					echo "selected";
 				} ?>><?php echo $value['category_name'] ?></option>
 			<?php endforeach ?>
@@ -48,41 +48,42 @@ foreach ($tag as $key => $value) {
 	<div class="form-group">
 		<label>News Title</label>
 		<div>
-			<input type="text" name="news_title" class="form-control"
-			value="<?php echo $news[0]['news_title'] ?>">
+			<input type="text" name="news_title" class="form-control" required=""
+			value="<?php echo $news['news_title'] ?>">
 		</div>
 	</div>
+	<p><small style="color: red">*use 3:4 ratio image for better resolution</small></p>
 	<div class="form-group">
 		<label>New Image 1</label>
-		<img src="<?php echo base_url("assets/news/$image[news_image1]") ?>">
+		<img width="100" src="<?php echo base_url("assets/news/$image[news_image1]") ?>">
 		<br>
 		<br>
 		<input type="file" name="news_image1" class="form-control">
 	</div>
 	<div class="form-group">
 		<label>New Image 2</label>
-		<img src="<?php echo base_url("assets/news/$image[news_image2]") ?>">
+		<img width="100" src="<?php echo base_url("assets/news/$image[news_image2]") ?>">
 		<br>
 		<br>
 		<input type="file" name="news_image2" class="form-control">
 	</div>
 	<div class="form-group">
 		<label>News Image 3</label>
-		<img src="<?php echo base_url("assets/news/$image[news_image3]") ?>">
+		<img width="100" src="<?php echo base_url("assets/news/$image[news_image3]") ?>">
 		<br>
 		<br>
 		<input type="file" name="news_image3" class="form-control">
 	</div>
 	<div class="form-group">
 		<label>News Image 4</label>
-		<img src="<?php echo base_url("assets/news/$image[news_image4]") ?>">
+		<img width="100" src="<?php echo base_url("assets/news/$image[news_image4]") ?>">
 		<br>
 		<br>
 		<input type="file" name="news_image4" class="form-control">
 	</div>
 	<div class="form-group">
 		<label>News Image 5</label>
-		<img src="<?php echo base_url("assets/news/$image[news_image5]") ?>">
+		<img width="100" src="<?php echo base_url("assets/news/$image[news_image5]") ?>">
 		<br>
 		<br>
 		<input type="file" name="news_image5" class="form-control">
@@ -98,18 +99,18 @@ foreach ($tag as $key => $value) {
 	</div>
 	<div class="form-group"> 
 		<label>News Release</label>
-		<input type="date" name="news_release" class="form-control"
-		value="<?php echo $news[0]['news_release'] ?>">
+		<input type="date" name="news_release" class="form-control" required=""
+		value="<?php echo $news['news_release'] ?>">
 	</div>
 	<div class="form-group">
 		<label>News Summary</label>
-		<textarea name="news_summary" class="form-control"
-		><?php echo $news[0]['news_summary'] ?></textarea>	
+		<textarea name="news_summary" class="form-control" required=""
+		><?php echo $news['news_summary'] ?></textarea>	
 	</div>
 	<div class="form-group">
 		<label>News Content</label>
-		<textarea name="news_content" class="form-control" id="theeditor">
-			<?php echo $news[0]['news_content'] ?>
+		<textarea name="news_content" class="form-control" id="theeditor" required="">
+			<?php echo $news['news_content'] ?>
 		</textarea>
 		
 	</div>

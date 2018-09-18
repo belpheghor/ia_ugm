@@ -68,6 +68,11 @@ class Category extends CI_Controller {
 		$this->load->view('admin/news_category/ubah', $data);
 		$this->load->view('admin/footer');
 	}
+	function status($id)
+	{
+		$this->Mcategory->select_category($id);
+		redirect('admin/category','refresh');
+	}
 
 	
 

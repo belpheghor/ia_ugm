@@ -62,14 +62,14 @@
      </ul>
    </li>
    <li><a href="<?php echo base_url("admin/user"); ?>"> 
-      <i class="fa fa-tasks"></i>   User</a>
-    </li>
-   <li class="ia-tree">
+    <i class="fa fa-tasks"></i>   User</a>
+  </li>
+  <li class="ia-tree">
     <a href=""> <i class="fa fa-newspaper-o"></i>   News Data <i class="pull-right fa fa-angle-right"></i></a>
     <ul class="ia-tree-menu">
      <li><a href="<?php echo base_url("admin/news") ?>"> News</a></li>
      <li><a href="<?php echo base_url("admin/category") ?>"> News Category</a></li>
-    <!--  <li><a href="<?php echo base_url("admin/tag") ?>"> Tag</a></li> -->
+     <li><a href="<?php echo base_url("admin/tag") ?>"> Tag</a></li> 
      
    </ul>
  </li>

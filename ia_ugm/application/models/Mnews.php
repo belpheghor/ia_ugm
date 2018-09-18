@@ -18,16 +18,16 @@ class Mnews extends CI_Model {
 		$input['tag_id']=$tag_id;
 		$this->db->insert('news_tag', $input);
 	}
-	function news_detail($news_id)
-	{
-		// join dg tabel kategori
-		$this->db->join('news_category', 'news_category.category_id = news.category_id', 'left');
-		// join dengan tabel user
-		$this->db->join('user', 'news.user_id = user.user_id', 'left');
-		$this->db->where('news_id', $news_id);
-		$ambil=$this->db->get('news');
-		return $ambil->row_array();
-	}
+	// function news_detail($news_id)
+	// {
+	// 	// join dg tabel kategori
+	// 	$this->db->join('news_category', 'news_category.category_id = news.category_id', 'left');
+	// 	// join dengan tabel user
+	// 	$this->db->join('user', 'news.user_id = user.user_id', 'left');
+	// 	$this->db->where('news_id', $news_id);
+	// 	$ambil=$this->db->get('news');
+	// 	return $ambil->row_array();
+	// }
 
 	function related_news($category_id, $news_id){
 		$this->db->order_by('news.news_release', 'desc');
@@ -144,6 +144,22 @@ class Mnews extends CI_Model {
 			$this->db->update('news', $data);
 		}
 		
+	}
+	function ubah_status_news($id)
+	{
+		$status="";
+		$data['permission_status']="Pending";
+		$this->db->query("UPDATE news SET permission_status='$status' WHERE news_id !='$id'");
+		$this->db->where('news_id', $id);
+		$this->db->update('news', $data);
+	}
+	function select_news($id)
+	{
+		$status="";
+		$data['permission_status']="Accepted";
+		$this->db->query("UPDATE news SET permission_status='$status' WHERE news_id !='$id'");
+		$this->db->where('news_id', $id);
+		$this->db->update('news', $data);
 	}
 
 }

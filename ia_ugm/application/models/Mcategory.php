@@ -34,6 +34,22 @@ class Mcategory extends CI_Model {
 		$this->db->where('category_id', $id);
 		$this->db->update('news_category', $inputan);
 	}
+	function ubah_status_category($id)
+	{
+		$status="";
+		$data['category_status']="Pending";
+		$this->db->query("UPDATE news_category SET category_status='$status' WHERE category_id !='$id'");
+		$this->db->where('category_id', $id);
+		$this->db->update('news_category', $data);
+	}
+	function select_category($id)
+	{
+		$status="";
+		$data['category_status']="Accepted";
+		$this->db->query("UPDATE news_category SET category_status='$status' WHERE category_id !='$id'");
+		$this->db->where('category_id', $id);
+		$this->db->update('news_category', $data);
+	}
 }
 
 	/* End of file Mcategory.php */

@@ -68,6 +68,11 @@ class Category extends CI_Controller {
 		$this->load->view('supervisor/news_category/ubah', $data);
 		$this->load->view('supervisor/footer');
 	}
+	function status($id)
+	{
+		$this->Mcategory->ubah_status_category($id);
+		redirect('supervisor/category','refresh');
+	}
 
 	
 

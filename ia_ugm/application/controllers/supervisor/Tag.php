@@ -70,6 +70,11 @@ class Tag extends CI_Controller {
 		$this->load->view('supervisor/footer');
 	}
 
+	function status($id)
+	{
+		$this->Mtag->ubah_status_tag($id);
+		redirect('supervisor/tag','refresh');
+	}
 }
 
 /* End of file Tag.php */

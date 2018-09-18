@@ -78,6 +78,11 @@ class News extends CI_Controller {
 		$this->load->view('supervisor/news/ubah', $data);
 		$this->load->view('supervisor/footer');
 	}
+	function status($id)
+	{
+		$this->Mnews->ubah_status_news($id);
+		redirect('supervisor/news','refresh');
+	}
 
 }
 

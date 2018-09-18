@@ -12,14 +12,13 @@
 			<th>Date Created</th>
 			<th>Date Release</th>
 			<th>User</th> 
+			<th>Requested Permission</th>
 			<th>Option</th>
 		</tr>
 	</thead>
 
-			<?php foreach ($news as $key => $value): ?>
+	<?php foreach ($news as $key => $value): ?>
 		<tr>
-				
-			
 			<td><?php echo $key+1; ?></td>
 			<td><?php echo $value['category_name'] ?></td>
 			<td><?php echo $value['news_title'] ?></td>
@@ -38,12 +37,26 @@
 			</td>
 			<td><?php echo $value['user_name'] ?></td>
 			<td>
-				<!-- detail nyambung ke front(pengunjung) pada news yang di klik -->
-				<a href="<?php echo base_url("") ?>" class="btn btn-warning btn-sm">Detail</a>
-				<a href="<?php echo base_url("admin/news/edit/$value[news_id]") ?>" class="btn btn-info">Edit</a>
-				<a href="<?php echo base_url("admin/news/delete/$value[news_id]") ?>" class="btn btn-danger btn-sm">Delete</a>
-			</td>
-		</tr>
+				<?php if ($value['permission_status']=="Pending"): ?>
+					<span style="color: red"><?php echo $value['permission_status'] ?></span>
+				<?php endif ?>
+				<?php if ($value['permission_status']=="Accepted"): ?>
+					<span style="color: green">Accepted</span>
+					
+				<?php endif ?>
+			</td> 
+			<td>
+				<?php if ($value['permission_status']!="Pending"): ?>
+					<a href="<?php echo base_url("admin/news/status/$value[news_id]") ?>" class="btn btn-success btn-xs hidden">Accept</a>
+				<?php else: ?>
+					<a href="<?php echo base_url("admin/news/status/$value[news_id]") ?>" class="btn btn-success btn-xs">Accept</a>
+				<?php endif ?>
+				<a href="<?php echo base_url("#news"); ?>" class="btn btn-warning btn-xs">Detail</a>
+				<a href="<?php echo base_url("admin/news/edit/$value[news_id]") ?>"
+					class="btn btn-info btn-xs">Edit</a>
+					<a href="<?php echo base_url("admin/news/delete/$value[news_id]") ?>" class="btn btn-danger btn-xs">Delete</a>
+				</td>
+			</tr>
 
 		<?php endforeach ?>
-</table>
+	</table>

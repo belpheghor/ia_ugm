@@ -1,8 +1,15 @@
 <h3><b>Form News</b></h3>
 <hr>
-<pre>
-	<?php print_r($news) ?>
-</pre>
+
+<!-- <?php 
+foreach ($news as $key => $value) {
+	$tag_id[] = $value['tag_id'];
+}
+foreach ($tag as $key => $value) {
+	$semua_tag_id[] = $value['tag_id'];
+}
+ ?> -->
+ <?php $image = $news ?>
 <form method="post" enctype="multipart/form-data"> 
 	<div class="form-group">
 		<label>User</label>
@@ -31,43 +38,52 @@
 		
 	</div>
 	<div class="form-group">
+		<label>Tag</label>
+		<?php foreach ($tag as $key => $value): ?>
+			<input type="checkbox" name="tag_id[]" value="<?php echo $value['tag_id']; ?>" <?php if (in_array($semua_tag_id[$key],$tag_id)) {
+				echo "checked";
+			} ?>><?php echo $value['tag_name']; ?>
+		<?php endforeach ?>
+	</div>
+	<div class="form-group">
 		<label>News Title</label>
 		<div>
-			<input type="text" name="news_title" class="form-control"
+			<input type="text" name="news_title" class="form-control" required=""
 			value="<?php echo $news['news_title'] ?>">
 		</div>
 	</div>
+	<p><small style="color: red">*use 3:4 ratio image for better resolution</small></p>
 	<div class="form-group">
 		<label>New Image 1</label>
-		<img src="<?php echo base_url("assets/news/$news[news_image1]") ?>">
+		<img width="100" src="<?php echo base_url("assets/news/$image[news_image1]") ?>">
 		<br>
 		<br>
 		<input type="file" name="news_image1" class="form-control">
 	</div>
 	<div class="form-group">
 		<label>New Image 2</label>
-		<img src="<?php echo base_url("assets/news/$news[news_image2]") ?>">
+		<img width="100" src="<?php echo base_url("assets/news/$image[news_image2]") ?>">
 		<br>
 		<br>
 		<input type="file" name="news_image2" class="form-control">
 	</div>
 	<div class="form-group">
 		<label>News Image 3</label>
-		<img src="<?php echo base_url("assets/news/$news[news_image3]") ?>">
+		<img width="100" src="<?php echo base_url("assets/news/$image[news_image3]") ?>">
 		<br>
 		<br>
 		<input type="file" name="news_image3" class="form-control">
 	</div>
 	<div class="form-group">
 		<label>News Image 4</label>
-		<img src="<?php echo base_url("assets/news/$news[news_image4]") ?>">
+		<img width="100" src="<?php echo base_url("assets/news/$image[news_image4]") ?>">
 		<br>
 		<br>
 		<input type="file" name="news_image4" class="form-control">
 	</div>
 	<div class="form-group">
 		<label>News Image 5</label>
-		<img src="<?php echo base_url("assets/news/$news[news_image5]") ?>">
+		<img width="100" src="<?php echo base_url("assets/news/$image[news_image5]") ?>">
 		<br>
 		<br>
 		<input type="file" name="news_image5" class="form-control">
@@ -83,17 +99,17 @@
 	</div>
 	<div class="form-group"> 
 		<label>News Release</label>
-		<input type="date" name="news_release" class="form-control"
+		<input type="date" name="news_release" class="form-control" required=""
 		value="<?php echo $news['news_release'] ?>">
 	</div>
 	<div class="form-group">
 		<label>News Summary</label>
-		<textarea name="news_summary" class="form-control"
+		<textarea name="news_summary" class="form-control" required=""
 		><?php echo $news['news_summary'] ?></textarea>	
 	</div>
 	<div class="form-group">
 		<label>News Content</label>
-		<textarea name="news_content" class="form-control" id="theeditor">
+		<textarea name="news_content" class="form-control" id="theeditor" required="">
 			<?php echo $news['news_content'] ?>
 		</textarea>
 		

@@ -18,13 +18,13 @@ class News extends CI_Controller {
 		$this->load->view('admin/news/tampil', $data);
 		$this->load->view('admin/footer');
 	}
-	function detail($news_id)
-	{
-		$data['news_detail']=$this->Mnews->news_detail($news_id);
-		$this->load->view('admin/header');
-		$this->load->view('admin/news/detail', $data);
-		$this->load->view('admin/footer');
-	}
+	// function detail($news_id)
+	// {
+	// 	$data['news_detail']=$this->Mnews->news_detail($news_id);
+	// 	$this->load->view('admin/header');
+	// 	$this->load->view('admin/news/detail', $data);
+	// 	$this->load->view('admin/footer');
+	// }
 	function add()
 	{
 		$input = $this->input->post();

@@ -67,6 +67,7 @@
     <ul class="ia-tree-menu">
      <li><a href="<?php echo base_url("supervisor/news") ?>"> News</a></li>
      <li><a href="<?php echo base_url("supervisor/category") ?>"> News Category</a></li>
+     <li><a href="<?php echo base_url("supervisor/tag") ?>"> Tag</a></li> 
    </ul>
  </li>
  <li><a href="<?php echo base_url("supervisor/mentor") ?>"> <i class="fa fa-user"></i> Mentor</a></li>

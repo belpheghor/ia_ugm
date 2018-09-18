@@ -36,11 +36,11 @@
 		</div>
 		<div class="form-group">
 			<label>News Title</label>
-			<input type="text" name="news_title" class="form-control">
+			<input type="text" name="news_title" class="form-control" required="">
 		</div>
 		<div class="form-group">
 			<label>News Image 1</label>
-			<input type="file" name="news_image1" class="form-control">
+			<input type="file" name="news_image1" class="form-control" required="">
 		</div>
 		<div class="form-group">
 			<label>News Image 2</label>
@@ -60,7 +60,7 @@
 		</div>
 		<div class="form-group">
 			<label>News Status</label>
-			<select class="form-control" name="news_status">
+			<select class="form-control" name="news_status" required="">
 				<option>- Select Status -</option>
 				<option value=1>publish</option>
 				<option value=0>unpublish</option>
@@ -69,16 +69,16 @@
 		</div>
 		<div class="form-group">
 			<label>News Release</label>
-			<input type="date" name="news_release" class="form-control">
+			<input type="date" name="news_release" class="form-control" required="">
 			
 		</div>
 		<div class="form-group">
 			<label>News Summary</label>
-			<textarea class="form-control" name="news_summary"></textarea>
+			<textarea class="form-control" required="" name="news_summary"></textarea>
 		</div>
 		<div class="form-group">
 			<label>News Content</label>
-			<textarea class="form-control" name="news_content" id="theeditor"></textarea>
+			<textarea class="form-control" name="news_content" id="theeditor" required=""></textarea>
 		</div>
 		<button class="btn btn-info btn-sm">Submit</button>
 		<a href="<?php echo base_url("admin/news") ?>" class="btn btn-danger btn-sm">Cancel</a>

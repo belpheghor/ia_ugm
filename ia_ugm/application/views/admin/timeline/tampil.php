@@ -42,10 +42,6 @@
  						<a href="<?php echo base_url("admin/timeline/edit/$value[timeline_id]") ?>"
  							class="btn btn-info btn-xs">Edit</a>
  						<a href="<?php echo base_url("admin/timeline/delete/$value[timeline_id]") ?>" class="btn btn-danger btn-xs">Delete</a>
- 						
- 							
- 						
-
  					</td>
  				</tr>
 

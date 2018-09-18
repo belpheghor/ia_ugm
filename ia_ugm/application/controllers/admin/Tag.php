@@ -69,6 +69,11 @@ class Tag extends CI_Controller {
 		$this->load->view('admin/tag/ubah', $data);
 		$this->load->view('admin/footer');
 	}
+	function status($id)
+	{
+		$this->Mtag->select_tag($id);
+		redirect('admin/tag','refresh');
+	}
 
 }
 
