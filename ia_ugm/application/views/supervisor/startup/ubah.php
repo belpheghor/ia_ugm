@@ -16,7 +16,8 @@
 	<div class="form-group">
 		<label>New Image</label>
 		<input type="file" name="startup_image" class="form-control" required=""
-		value="<?php echo $startup['startup_image'] ?>">		
+		value="<?php echo $startup['startup_image'] ?>">	
+		<p><small style="color: red">*use 3:4 ratio image for better resolution</small></p>		
 	</div>
 	<div class="form-group">
 		<label>Startup Description</label> 

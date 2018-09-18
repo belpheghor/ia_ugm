@@ -61,6 +61,22 @@ class Mpartner extends CI_Model {
 		$this->db->where('partner_id', $id);
 		$this->db->update('partner', $input);
 	}
+	function ubah_status_partner($id)
+	{
+		$status="";
+		$data['partner_status']="Pending";
+		$this->db->query("UPDATE partner SET partner_status='$status' WHERE partner_id !='$id'");
+		$this->db->where('partner_id', $id);
+		$this->db->update('partner', $data);
+	}
+	function select_partner($id)
+	{
+		$status="";
+		$data['partner_status']="Accepted";
+		$this->db->query("UPDATE partner SET partner_status='$status' WHERE partner_id !='$id'");
+		$this->db->where('partner_id', $id);
+		$this->db->update('partner', $data);
+	}
 
 }
 

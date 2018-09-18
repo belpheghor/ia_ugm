@@ -11,6 +11,7 @@
  				<th>Startup Name</th>
  				<th>Link</th>
  				<th>Status</th>
+ 				<th>Requested Permission</th>
  				<th>Option</th>
  			</tr>
  		</thead>

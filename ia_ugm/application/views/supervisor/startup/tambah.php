@@ -9,7 +9,8 @@
 	</div>
 	<div class="form-group">
 		<label>Startup Image</label>
-		<input type="file" name="startup_image" class="form-control" required="" >		
+		<input type="file" name="startup_image" class="form-control" required="" >	
+		<p><small style="color: red">*use 3:4 ratio image for better resolution</small></p>		
 	</div>
 	<div class="form-group">
 		<label>Startup Description</label> 

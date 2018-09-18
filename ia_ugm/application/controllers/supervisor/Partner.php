@@ -52,6 +52,11 @@ class Partner extends CI_Controller {
 		$this->load->view('supervisor/partner/ubah', $data);
 		$this->load->view('supervisor/footer');
 	}
+	function status($id)
+	{
+		$this->Mpartner->ubah_status_partner($id);
+		redirect('supervisor/partner','refresh');
+	}
 
 }
 

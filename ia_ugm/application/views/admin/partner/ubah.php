@@ -4,7 +4,7 @@
 	<div class="form-group">
 		<label>Partner Name</label>
 		<div>
-			<input type="text" name="partner_name" class="form-control"
+			<input type="text" name="partner_name" class="form-control" required=""
 			value="<?php echo $partner['partner_name'] ?>">
 		</div>
 	</div>
@@ -14,7 +14,8 @@
 			</div>
 			<div class="form-group">
 				<label>New Image</label>
-				<input type="file" name="partner_image" class="form-control">
+				<input type="file" name="partner_image" class="form-control" required="">
+				<p><small style="color: red">*use 3:4 ratio image for better resolution</small></p>	
 			</div>
 		
 	<div class="form-group">
